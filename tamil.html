@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.J. Yesudas - Tamil Songs</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎵 K.J. Yesudas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="malayalam.html">Malayalam</a></li>
+                <li><a href="tamil.html">Tamil</a></li>
+                <li><a href="telugu.html">Telugu</a></li>
+                <li><a href="kannada.html">Kannada</a></li>
+                <li><a href="hindi.html">Hindi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>🎬 Tamil Songs</h1>
+        <p>Thousands of timeless Tamil classics</p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="search-section">
+        <div class="search-filter-row">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for songs, movies, or composers...">
+            </div>
+        </div>
+        
+        <div class="filter-section">
+            <span class="filter-label">Filter by:</span>
+            <select id="genreFilter" class="filter-select">
+                <option value="all">All Genres</option>
+            </select>
+            <select id="composerFilter" class="filter-select">
+                <option value="all">All Composers</option>
+            </select>
+            <select id="cosingerFilter" class="filter-select">
+                <option value="all">All Co-Singers</option>
+            </select>
+        </div>
+        
+        <div class="stats-display" id="statsDisplay"></div>
+    </div>
+
+    <!-- Songs Grid -->
+    <div class="songs-container">
+        <div class="songs-grid" id="songsGrid">
+            <div class="loading">Loading songs from Google Sheets</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>A Tribute to the Legendary K.J. Yesudas</strong></p>
+        <p>Celebrating over 60 years of musical excellence</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 - This is a fan tribute website</p>
+    </footer>
+
+    <!-- Mini Player -->
+    <div id="miniPlayer" class="mini-player hidden">
+        <div class="mini-player-content">
+            <div class="mini-player-info">
+                <h4 id="playerSongTitle">Song Title</h4>
+                <p id="playerSongDetails">Movie • Singer</p>
+            </div>
+            <div class="mini-player-controls">
+                <button id="minimizePlayer" class="player-btn">▼</button>
+                <button id="closePlayer" class="player-btn">✕</button>
+            </div>
+        </div>
+        <div id="playerContainer" class="player-container"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
