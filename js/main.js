@@ -130,7 +130,7 @@ function createSongCard(song) {
             <div class="song-info">
                 <h3>${title}</h3>
                 <div class="song-details">
-                    ${movie ? `<div class="song-detail"><strong>Movie:</strong> ${movie}</div>` : ''}
+                    ${movie ? `<div class="song-detail"><strong>Movie/Album:</strong> ${movie}</div>` : ''}
                     ${year ? `<div class="song-detail"><strong>Year:</strong> ${year}</div>` : ''}
                     ${composer ? `<div class="song-detail"><strong>Music:</strong> ${composer}</div>` : ''}
                     ${cosinger ? `<div class="song-detail"><strong>Co-Singer:</strong> ${cosinger}</div>` : ''}
