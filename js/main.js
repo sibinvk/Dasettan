@@ -1,10 +1,10 @@
 // Configuration - Replace with your Google Sheets Published CSV URLs
 const SHEETS_CONFIG = {
-    malayalam: 'YOUR_MALAYALAM_SHEET_CSV_URL',
-    tamil: 'YOUR_TAMIL_SHEET_CSV_URL',
-    telugu: 'YOUR_TELUGU_SHEET_CSV_URL',
-    kannada: 'YOUR_KANNADA_SHEET_CSV_URL',
-    hindi: 'YOUR_HINDI_SHEET_CSV_URL'
+    malayalam: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=0&single=true&output=csv',
+    tamil: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=647669946&single=true&output=csv',
+    telugu: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=737507955&single=true&output=csv',
+    kannada: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=718356028&single=true&output=csv',
+    hindi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=1047532705&single=true&output=csv'
 };
 
 // Global variables
