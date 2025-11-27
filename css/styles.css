@@ -308,8 +308,10 @@ nav {
 
 .stats-display {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-top: 0.5rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
 }
 
 /* Songs Grid */
