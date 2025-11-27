@@ -57,8 +57,8 @@ function parseCSV(csvText) {
             song[header] = values[index] ? values[index].trim() : '';
         });
         
-        // Only add songs with valid YouTube links
-        if (song.youtube || song['youtube link'] || song.link) {
+        // MODIFICATION 1: Add ALL songs, even without YouTube links
+        if (song.song || song.title) {  // Only need a song title to add it
             songs.push(song);
         }
     }
@@ -118,14 +118,14 @@ function createSongCard(song) {
     const composer = song.composer || song['music director'] || song.music || '';
     const cosinger = song.cosinger || song['co-singer'] || song.singer || '';
     const genre = song.genre || song.category || '';
+    const youtubeUrl = song.youtube || song['youtube link'] || song.link || '';
+    const hasVideo = !!youtubeUrl;
     
     return `
-        <div class="song-card" data-genre="${genre}">
+        <div class="song-card ${!hasVideo ? 'no-video' : ''}" data-genre="${genre}">
             <div class="song-thumbnail">
-                🎵
-                <div class="play-overlay">
-                    <div class="play-icon">▶</div>
-                </div>
+                ${hasVideo ? '🎵' : '🚫'}
+                ${hasVideo ? '<div class="play-overlay"><div class="play-icon">▶</div></div>' : '<div class="no-video-overlay"><div class="no-video-text">No Video</div></div>'}
             </div>
             <div class="song-info">
                 <h3>${title}</h3>
@@ -147,7 +147,7 @@ function playYouTubeVideo(song) {
     const videoId = getYouTubeVideoId(youtubeUrl);
     
     if (!videoId) {
-        alert('YouTube link not available for this song');
+        alert('YouTube video not available for this song');
         return;
     }
     
@@ -163,10 +163,10 @@ function playYouTubeVideo(song) {
     songTitle.textContent = title;
     songDetails.textContent = [movie, cosinger].filter(Boolean).join(' • ');
     
-    // Create YouTube iframe
+    // MODIFICATION 3: Create YouTube iframe that plays IN the page (not opening new page)
     playerContainer.innerHTML = `
         <iframe
-            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
@@ -176,8 +176,8 @@ function playYouTubeVideo(song) {
     miniPlayer.classList.remove('hidden');
     miniPlayer.classList.remove('minimized');
     
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll to player smoothly
+    miniPlayer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // Search functionality
