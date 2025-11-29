@@ -30,6 +30,12 @@ function getYouTubeVideoId(url) {
     return null;
 }
 
+// Get language class name for styling
+function getLanguageClass(language) {
+    if (!language) return '';
+    return language.toLowerCase().replace(/\s+/g, '-');
+}
+
 // Fetch songs from Google Sheets CSV
 async function fetchSongsFromSheet(sheetUrl) {
     try {
@@ -120,6 +126,7 @@ function createSongCard(song) {
     const cosinger = song.cosinger || song['co-singer'] || song.singer || '';
     const genre = song.genre || song.category || '';
     const language = song.language || '';
+    const languageClass = getLanguageClass(language);
     const youtubeUrl = song.youtube || song['youtube link'] || song.link || '';
     const hasVideo = !!youtubeUrl;
     
@@ -131,8 +138,8 @@ function createSongCard(song) {
             </div>
             <div class="song-info">
                 <h3>${title}</h3>
+                ${language ? `<div class="language-badge ${languageClass}">${language}</div>` : ''}
                 <div class="song-details">
-                    ${language ? `<div class="song-detail"><strong>Language:</strong> ${language}</div>` : ''}
                     ${movie ? `<div class="song-detail"><strong>Movie:</strong> ${movie}</div>` : ''}
                     ${year ? `<div class="song-detail"><strong>Year:</strong> ${year}</div>` : ''}
                     ${composer ? `<div class="song-detail"><strong>Music:</strong> ${composer}</div>` : ''}
