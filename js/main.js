@@ -4,7 +4,8 @@ const SHEETS_CONFIG = {
     tamil: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=647669946&single=true&output=csv',
     telugu: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=737507955&single=true&output=csv',
     kannada: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=718356028&single=true&output=csv',
-    hindi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=1047532705&single=true&output=csv'
+    hindi: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=1047532705&single=true&output=csv',
+    other: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAtGv_Vrh8wp4RXJmmQbiAJfALSdhIFMzt1GCbp6dd4x2ApFEkI6ejFtQ469PbJCr2qRERzWpIruw9/pub?gid=1162950769&single=true&output=csv'
 };
 
 // Global variables
@@ -57,8 +58,8 @@ function parseCSV(csvText) {
             song[header] = values[index] ? values[index].trim() : '';
         });
         
-        // MODIFICATION 1: Add ALL songs, even without YouTube links
-        if (song.song || song.title) {  // Only need a song title to add it
+        // Add ALL songs, even without YouTube links
+        if (song.song || song.title) {
             songs.push(song);
         }
     }
@@ -118,6 +119,7 @@ function createSongCard(song) {
     const composer = song.composer || song['music director'] || song.music || '';
     const cosinger = song.cosinger || song['co-singer'] || song.singer || '';
     const genre = song.genre || song.category || '';
+    const language = song.language || '';
     const youtubeUrl = song.youtube || song['youtube link'] || song.link || '';
     const hasVideo = !!youtubeUrl;
     
@@ -130,6 +132,7 @@ function createSongCard(song) {
             <div class="song-info">
                 <h3>${title}</h3>
                 <div class="song-details">
+                    ${language ? `<div class="song-detail"><strong>Language:</strong> ${language}</div>` : ''}
                     ${movie ? `<div class="song-detail"><strong>Movie:</strong> ${movie}</div>` : ''}
                     ${year ? `<div class="song-detail"><strong>Year:</strong> ${year}</div>` : ''}
                     ${composer ? `<div class="song-detail"><strong>Music:</strong> ${composer}</div>` : ''}
@@ -163,7 +166,7 @@ function playYouTubeVideo(song) {
     songTitle.textContent = title;
     songDetails.textContent = [movie, cosinger].filter(Boolean).join(' • ');
     
-    // MODIFICATION 3: Create YouTube iframe that plays IN the page (not opening new page)
+    // Create YouTube iframe that plays IN the page
     playerContainer.innerHTML = `
         <iframe
             src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
@@ -198,7 +201,8 @@ function setupSearch() {
                 song.composer || '',
                 song['music director'] || '',
                 song.cosinger || '',
-                song['co-singer'] || ''
+                song['co-singer'] || '',
+                song.language || ''
             ].join(' ').toLowerCase();
             
             return searchFields.includes(searchTerm);
@@ -211,6 +215,12 @@ function setupSearch() {
 
 // Filter functionality
 function setupFilters() {
+    // Language filter (for Other Languages page)
+    const languageFilter = document.getElementById('languageFilter');
+    if (languageFilter) {
+        languageFilter.addEventListener('change', applyFilters);
+    }
+    
     // Genre filter
     const genreFilter = document.getElementById('genreFilter');
     if (genreFilter) {
@@ -233,6 +243,13 @@ function setupFilters() {
 // Apply all filters
 function applyFilters() {
     let filtered = [...allSongs];
+    
+    const languageFilter = document.getElementById('languageFilter');
+    if (languageFilter && languageFilter.value !== 'all') {
+        filtered = filtered.filter(song => 
+            (song.language || '').toLowerCase() === languageFilter.value.toLowerCase()
+        );
+    }
     
     const genreFilter = document.getElementById('genreFilter');
     if (genreFilter && genreFilter.value !== 'all') {
@@ -261,9 +278,21 @@ function applyFilters() {
 
 // Populate filter dropdowns
 function populateFilters(songs) {
+    populateLanguageFilter(songs);
     populateGenreFilter(songs);
     populateComposerFilter(songs);
     populateCosingerFilter(songs);
+}
+
+function populateLanguageFilter(songs) {
+    const languageFilter = document.getElementById('languageFilter');
+    if (!languageFilter) return;
+    
+    const languages = [...new Set(songs.map(s => s.language).filter(Boolean))];
+    languages.sort();
+    
+    languageFilter.innerHTML = '<option value="all">All Languages</option>' + 
+        languages.map(l => `<option value="${l}">${l}</option>`).join('');
 }
 
 function populateGenreFilter(songs) {
