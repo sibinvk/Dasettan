@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Cambria', serif;
     line-height: 1.6;
     color: #333;
     background: #f9f9f9;
@@ -152,7 +152,7 @@ nav {
 }
 
 .award-badge {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    background: linear-gradient(135deg, #EFD500 0%, #FFA300 100%);
     color: #8B4513;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -308,13 +308,13 @@ nav {
 
 .stats-display {
     color: #666;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-top: 0.5rem;
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: Cambria, sans-serif;
 }
 
-/* Songs Grid - 5 songs per row */
+/* Songs Grid */
 .songs-container {
     max-width: 1400px;
     margin: 2rem auto;
@@ -448,6 +448,80 @@ nav {
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
+}
+
+/* Language Badge Styling */
+.language-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: white;
+    text-transform: capitalize;
+}
+
+.language-badge.bengali {
+    background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+}
+
+.language-badge.odia {
+    background: linear-gradient(135deg, #1B4D3E 0%, #2E8B57 100%);
+}
+
+.language-badge.marathi {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+}
+
+.language-badge.gujarati {
+    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
+}
+
+.language-badge.sanskrit {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+}
+
+.language-badge.tulu {
+    background: linear-gradient(135deg, #191970 0%, #4169E1 100%);
+}
+
+.language-badge.konkani {
+    background: linear-gradient(135deg, #8B008B 0%, #9932CC 100%);
+}
+
+.language-badge.assamese {
+    background: linear-gradient(135deg, #006400 0%, #228B22 100%);
+}
+
+.language-badge.urdu {
+    background: linear-gradient(135deg, #2F4F4F 0%, #556B2F 100%);
+}
+
+.language-badge.bhojpuri {
+    background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+    color: #333;
+}
+
+.language-badge.english {
+    background: linear-gradient(135deg, #000080 0%, #0000CD 100%);
+}
+
+.language-badge.arabic {
+    background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
+}
+
+.language-badge.braj {
+    background: linear-gradient(135deg, #8B0000 0%, #CD5C5C 100%);
+}
+
+.language-badge.kumaoni {
+    background: linear-gradient(135deg, #483D8B 0%, #6A5ACD 100%);
+}
+
+/* Default for any other language not specifically defined */
+.language-badge {
+    background: linear-gradient(135deg, #696969 0%, #808080 100%);
 }
 
 /* Mini Player */
@@ -604,68 +678,4 @@ footer p {
     .player-container iframe {
         height: 250px;
     }
-}
-/* Language-specific badges for Other Languages page */
-.language-badge {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    color: white !important;
-}
-
-.language-badge.bengali {
-    background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
-}
-
-.language-badge.odia {
-    background: linear-gradient(135deg, #1B4D3E 0%, #2E8B57 100%);
-}
-
-.language-badge.marathi {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
-}
-
-.language-badge.gujarati {
-    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
-}
-
-.language-badge.sanskrit {
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-}
-
-.language-badge.tulu {
-    background: linear-gradient(135deg, #191970 0%, #4169E1 100%);
-}
-
-.language-badge.konkani {
-    background: linear-gradient(135deg, #8B008B 0%, #9932CC 100%);
-}
-
-.language-badge.assamese {
-    background: linear-gradient(135deg, #006400 0%, #228B22 100%);
-}
-
-.language-badge.urdu {
-    background: linear-gradient(135deg, #2F4F4F 0%, #556B2F 100%);
-}
-
-.language-badge.bhojpuri {
-    background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
-    color: #333 !important;
-}
-
-.language-badge.english {
-    background: linear-gradient(135deg, #000080 0%, #0000CD 100%);
-}
-
-.language-badge.arabic {
-    background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
-}
-
-/* Default for any other language */
-.language-badge:not([class*=" "]) {
-    background: linear-gradient(135deg, #696969 0%, #808080 100%);
 }
