@@ -316,14 +316,14 @@ nav {
 
 /* Songs Grid */
 .songs-container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 2rem auto;
     padding: 0 2rem;
 }
 
 .songs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -453,11 +453,11 @@ nav {
 /* Language Badge Styling */
 .language-badge {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
     font-weight: bold;
-    font-size: 0.95rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
     color: white;
     text-transform: capitalize;
 }
