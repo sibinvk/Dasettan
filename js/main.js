@@ -126,12 +126,13 @@ function createSongCard(song) {
     const cosinger = song.cosinger || song['co-singer'] || song.singer || '';
     const genre = song.genre || song.category || '';
     const language = song.language || '';
+    const type = song.type || '';
     const languageClass = getLanguageClass(language);
     const youtubeUrl = song.youtube || song['youtube link'] || song.link || '';
     const hasVideo = !!youtubeUrl;
     
     return `
-        <div class="song-card ${!hasVideo ? 'no-video' : ''}" data-genre="${genre}">
+        <div class="song-card ${!hasVideo ? 'no-video' : ''}" data-genre="${genre}" data-type="${type}">
             <div class="song-thumbnail">
                 ${hasVideo ? '🎵' : '🚫'}
                 ${hasVideo ? '<div class="play-overlay"><div class="play-icon">▶</div></div>' : '<div class="no-video-overlay"><div class="no-video-text">No Video</div></div>'}
@@ -140,6 +141,7 @@ function createSongCard(song) {
                 <h3>${title}</h3>
                 ${language ? `<div class="language-badge ${languageClass}">${language}</div>` : ''}
                 <div class="song-details">
+                    ${type ? `<div class="song-detail"><strong>Type:</strong> ${type}</div>` : ''}
                     ${movie ? `<div class="song-detail"><strong>Movie:</strong> ${movie}</div>` : ''}
                     ${year ? `<div class="song-detail"><strong>Year:</strong> ${year}</div>` : ''}
                     ${composer ? `<div class="song-detail"><strong>Music:</strong> ${composer}</div>` : ''}
@@ -209,7 +211,8 @@ function setupSearch() {
                 song['music director'] || '',
                 song.cosinger || '',
                 song['co-singer'] || '',
-                song.language || ''
+                song.language || '',
+                song.type || ''
             ].join(' ').toLowerCase();
             
             return searchFields.includes(searchTerm);
@@ -222,6 +225,12 @@ function setupSearch() {
 
 // Filter functionality
 function setupFilters() {
+    // Type filter
+    const typeFilter = document.getElementById('typeFilter');
+    if (typeFilter) {
+        typeFilter.addEventListener('change', applyFilters);
+    }
+    
     // Language filter (for Other Languages page)
     const languageFilter = document.getElementById('languageFilter');
     if (languageFilter) {
@@ -250,6 +259,13 @@ function setupFilters() {
 // Apply all filters
 function applyFilters() {
     let filtered = [...allSongs];
+    
+    const typeFilter = document.getElementById('typeFilter');
+    if (typeFilter && typeFilter.value !== 'all') {
+        filtered = filtered.filter(song => 
+            (song.type || '').toLowerCase() === typeFilter.value.toLowerCase()
+        );
+    }
     
     const languageFilter = document.getElementById('languageFilter');
     if (languageFilter && languageFilter.value !== 'all') {
@@ -285,10 +301,22 @@ function applyFilters() {
 
 // Populate filter dropdowns
 function populateFilters(songs) {
+    populateTypeFilter(songs);
     populateLanguageFilter(songs);
     populateGenreFilter(songs);
     populateComposerFilter(songs);
     populateCosingerFilter(songs);
+}
+
+function populateTypeFilter(songs) {
+    const typeFilter = document.getElementById('typeFilter');
+    if (!typeFilter) return;
+    
+    const types = [...new Set(songs.map(s => s.type).filter(Boolean))];
+    types.sort();
+    
+    typeFilter.innerHTML = '<option value="all">All Types</option>' + 
+        types.map(t => `<option value="${t}">${t}</option>`).join('');
 }
 
 function populateLanguageFilter(songs) {
