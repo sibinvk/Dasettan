@@ -22,13 +22,13 @@
             </ul>
         </nav>
     </header>
-
+    
     <!-- Page Header -->
     <div class="page-header">
         <h1>🎬 Tamil Songs</h1>
         <p>Thousands of timeless Tamil classics</p>
     </div>
-
+    
     <!-- Search and Filter -->
     <div class="search-section">
         <div class="search-filter-row">
@@ -39,6 +39,9 @@
         
         <div class="filter-section">
             <span class="filter-label">Filter by:</span>
+            <select id="typeFilter" class="filter-select">
+                <option value="all">All Types</option>
+            </select>
             <select id="genreFilter" class="filter-select">
                 <option value="all">All Genres</option>
             </select>
@@ -52,21 +55,21 @@
         
         <div class="stats-display" id="statsDisplay"></div>
     </div>
-
+    
     <!-- Songs Grid -->
     <div class="songs-container">
         <div class="songs-grid" id="songsGrid">
             <div class="loading">Loading songs from Google Sheets</div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <p><strong>A Tribute to the Legendary K.J. Yesudas</strong></p>
         <p>Celebrating over 60 years of musical excellence</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 - This is a fan tribute website</p>
     </footer>
-
+    
     <!-- Mini Player -->
     <div id="miniPlayer" class="mini-player hidden">
         <div class="mini-player-content">
@@ -81,7 +84,7 @@
         </div>
         <div id="playerContainer" class="player-container"></div>
     </div>
-
+    
     <script src="js/main.js"></script>
 </body>
 </html>
