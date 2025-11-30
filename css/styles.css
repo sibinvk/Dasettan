@@ -463,19 +463,19 @@ nav {
 }
 
 .language-badge.bengali {
-    background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+    background: linear-gradient(135deg, #EB3324 0%, #B22222 100%);
 }
 
 .language-badge.odia {
-    background: linear-gradient(135deg, #1B4D3E 0%, #2E8B57 100%);
+    background: linear-gradient(135deg, #8E403A 0%, #2E8B57 100%);
 }
 
 .language-badge.marathi {
-    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+    background: linear-gradient(135deg, #3282F6 0%, #FF8C00 100%);
 }
 
 .language-badge.gujarati {
-    background: linear-gradient(135deg, #4B0082 0%, #6A5ACD 100%);
+    background: linear-gradient(135deg, #00129A 0%, #6A5ACD 100%);
 }
 
 .language-badge.sanskrit {
@@ -483,11 +483,11 @@ nav {
 }
 
 .language-badge.tulu {
-    background: linear-gradient(135deg, #191970 0%, #4169E1 100%);
+    background: linear-gradient(135deg, #F09B59 0%, #4169E1 100%);
 }
 
 .language-badge.konkani {
-    background: linear-gradient(135deg, #8B008B 0%, #9932CC 100%);
+    background: linear-gradient(135deg, #817F26 0%, #9932CC 100%);
 }
 
 .language-badge.assamese {
@@ -495,7 +495,7 @@ nav {
 }
 
 .language-badge.urdu {
-    background: linear-gradient(135deg, #2F4F4F 0%, #506B2F 100%);
+    background: linear-gradient(135deg, #3580BB 0%, #506B2F 100%);
 }
 
 .language-badge.bhojpuri {
@@ -504,11 +504,11 @@ nav {
 }
 
 .language-badge.english {
-    background: linear-gradient(135deg, #000080 0%, #0000CD 100%);
+    background: linear-gradient(135deg, #58135E 0%, #0000CD 100%);
 }
 
 .language-badge.arabic {
-    background: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);
+    background: linear-gradient(135deg, #5ABF3B 0%, #6B8E23 100%);
 }
 
 .language-badge.braj {
