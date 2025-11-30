@@ -463,23 +463,23 @@ nav {
 }
 
 .language-badge.bengali {
-    background: linear-gradient(135deg, #EB3324 0%, #B22222 100%);
+    background: linear-gradient(135deg, #EB3324 0%, #EB3324 100%);
 }
 
 .language-badge.odia {
-    background: linear-gradient(135deg, #8E403A 0%, #2E8B57 100%);
+    background: linear-gradient(135deg, #8E403A 0%, #8E403A 100%);
 }
 
 .language-badge.marathi {
-    background: linear-gradient(135deg, #3282F6 0%, #FF8C00 100%);
+    background: linear-gradient(135deg, #3282F6 0%, #3282F6 100%);
 }
 
 .language-badge.gujarati {
-    background: linear-gradient(135deg, #00129A 0%, #6A5ACD 100%);
+    background: linear-gradient(135deg, #00129A 0%, #00129A 100%);
 }
 
 .language-badge.sanskrit {
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #8B4513 100%);
 }
 
 .language-badge.tulu {
@@ -487,41 +487,41 @@ nav {
 }
 
 .language-badge.konkani {
-    background: linear-gradient(135deg, #817F26 0%, #9932CC 100%);
+    background: linear-gradient(135deg, #817F26 0%, #817F26 100%);
 }
 
 .language-badge.assamese {
-    background: linear-gradient(135deg, #006400 0%, #228B22 100%);
+    background: linear-gradient(135deg, #006400 0%, #006400 100%);
 }
 
 .language-badge.urdu {
-    background: linear-gradient(135deg, #3580BB 0%, #506B2F 100%);
+    background: linear-gradient(135deg, #3580BB 0%, #3580BB 100%);
 }
 
 .language-badge.bhojpuri {
-    background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+    background: linear-gradient(135deg, #B8860B 0%, #B8860B 100%);
     color: #333;
 }
 
 .language-badge.english {
-    background: linear-gradient(135deg, #58135E 0%, #0000CD 100%);
+    background: linear-gradient(135deg, #58135E 0%, #58135E 100%);
 }
 
 .language-badge.arabic {
-    background: linear-gradient(135deg, #5ABF3B 0%, #6B8E23 100%);
+    background: linear-gradient(135deg, #5ABF3B 0%, #5ABF3B 100%);
 }
 
 .language-badge.braj {
-    background: linear-gradient(135deg, #8B0000 0%, #CD5C5C 100%);
+    background: linear-gradient(135deg, #8B0000 0%, #8B0000 100%);
 }
 
 .language-badge.kumaoni {
-    background: linear-gradient(135deg, #483D8B 0%, #6A5ACD 100%);
+    background: linear-gradient(135deg, #483D8B 0%, #483D8B 100%);
 }
 
 /* Default for any other language not specifically defined */
 .language-badge {
-    background: linear-gradient(135deg, #696969 0%, #808080 100%);
+    background: linear-gradient(135deg, #696969 0%, #696969 100%);
 }
 
 /* Mini Player */
