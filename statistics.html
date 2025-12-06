@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - K.J. Yesudas Tribute</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎵 K.J. Yesudas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="malayalam.html">Malayalam</a></li>
+                <li><a href="tamil.html">Tamil</a></li>
+                <li><a href="telugu.html">Telugu</a></li>
+                <li><a href="kannada.html">Kannada</a></li>
+                <li><a href="hindi.html">Hindi</a></li>
+                <li><a href="other.html">Other</a></li>
+                <li><a href="statistics.html" class="active">Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>📊 Career Statistics</h1>
+        <p>Analyzing 60+ years of musical excellence</p>
+    </div>
+    
+    <!-- Overall Stats Summary -->
+    <div class="stats-overview">
+        <div class="stat-card">
+            <div class="stat-icon">🎵</div>
+            <div class="stat-value" id="totalSongs">0</div>
+            <div class="stat-label">Total Songs</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎬</div>
+            <div class="stat-value" id="totalMovies">0</div>
+            <div class="stat-label">Movies/Albums</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎼</div>
+            <div class="stat-value" id="totalComposers">0</div>
+            <div class="stat-label">Composers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎤</div>
+            <div class="stat-value" id="totalCosingers">0</div>
+            <div class="stat-label">Co-Singers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-value" id="yearSpan">0</div>
+            <div class="stat-label">Years Active</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🌍</div>
+            <div class="stat-value" id="totalLanguages">6+</div>
+            <div class="stat-label">Languages</div>
+        </div>
+    </div>
+    
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect" class="filter-select">
+            <option value="all">All Languages Combined</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="tamil">Tamil</option>
+            <option value="telugu">Telugu</option>
+            <option value="kannada">Kannada</option>
+            <option value="hindi">Hindi</option>
+            <option value="other">Other Languages</option>
+        </select>
+    </div>
+    
+    <!-- Charts Section -->
+    <div class="charts-container">
+        <!-- Songs Per Year Chart -->
+        <div class="chart-card">
+            <h2>📈 Songs Per Year</h2>
+            <canvas id="songsPerYearChart"></canvas>
+        </div>
+        
+        <!-- Songs Per Decade Chart -->
+        <div class="chart-card">
+            <h2>📊 Songs Per Decade</h2>
+            <canvas id="songsPerDecadeChart"></canvas>
+        </div>
+        
+        <!-- Language Distribution (All Languages) -->
+        <div class="chart-card">
+            <h2>🌍 Language Distribution</h2>
+            <canvas id="languageDistChart"></canvas>
+        </div>
+        
+        <!-- Genre Distribution -->
+        <div class="chart-card">
+            <h2>🎭 Genre Distribution</h2>
+            <canvas id="genreDistChart"></canvas>
+        </div>
+    </div>
+    
+    <!-- Top 10 Lists -->
+    <div class="top-lists-container">
+        <!-- Top Composers -->
+        <div class="top-list-card">
+            <h2>🏆 Top 10 Composers</h2>
+            <div id="topComposersList" class="top-list"></div>
+        </div>
+        
+        <!-- Top Co-Singers -->
+        <div class="top-list-card">
+            <h2>🎤 Top 10 Co-Singers</h2>
+            <div id="topCosingersList" class="top-list"></div>
+        </div>
+        
+        <!-- Top Genres -->
+        <div class="top-list-card">
+            <h2>🎵 Top 10 Genres</h2>
+            <div id="topGenresList" class="top-list"></div>
+        </div>
+        
+        <!-- Most Productive Years -->
+        <div class="top-list-card">
+            <h2>📅 Most Productive Years</h2>
+            <div id="topYearsList" class="top-list"></div>
+        </div>
+    </div>
+    
+    <!-- Career Timeline -->
+    <div class="timeline-section">
+        <h2>🎯 Career Timeline</h2>
+        <div id="careerTimeline" class="timeline-container"></div>
+    </div>
+    
+    <!-- Loading Indicator -->
+    <div id="loadingStats" class="loading-overlay">
+        <div class="loading">Analyzing career data</div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p><strong>A Tribute to the Legendary K.J. Yesudas</strong></p>
+        <p>Celebrating over 60 years of musical excellence</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 - This is a fan tribute website</p>
+    </footer>
+    
+    <script src="js/statistics.js"></script>
+</body>
+</html>
