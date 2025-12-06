@@ -31,31 +31,69 @@
     
     <!-- Search and Filter -->
     <div class="search-section">
+        <!-- Search Box -->
         <div class="search-filter-row">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search for songs, movies, or composers...">
+                <input type="text" id="searchInput" placeholder="🔍 Search for songs, movies, composers...">
             </div>
         </div>
         
+        <!-- Quick Filter Buttons -->
+        <div class="quick-filters">
+            <button class="quick-filter-btn" data-filter="recent">📅 Recent (Last 10 Years)</button>
+            <button class="quick-filter-btn" data-filter="classic">⭐ Classic (1960-1990)</button>
+            <button class="quick-filter-btn" data-filter="golden">🏆 Golden Era (1970-1985)</button>
+            <button class="quick-filter-btn" data-filter="modern">🎬 Modern (1990-2010)</button>
+        </div>
+        
+        <!-- Advanced Filters -->
         <div class="filter-section">
             <span class="filter-label">Filter by:</span>
+            
+            <!-- Type Filter -->
             <select id="typeFilter" class="filter-select">
                 <option value="all">All Types</option>
             </select>
+            
+            <!-- Language Filter -->
             <select id="languageFilter" class="filter-select">
                 <option value="all">All Languages</option>
             </select>
+            
+            <!-- Decade Filter -->
+            <select id="decadeFilter" class="filter-select">
+                <option value="all">All Decades</option>
+            </select>
+            
+            <!-- Genre Filter -->
             <select id="genreFilter" class="filter-select">
                 <option value="all">All Genres</option>
             </select>
+            
+            <!-- Composer Filter -->
             <select id="composerFilter" class="filter-select">
                 <option value="all">All Composers</option>
             </select>
+            
+            <!-- Co-Singer Filter -->
             <select id="cosingerFilter" class="filter-select">
                 <option value="all">All Co-Singers</option>
             </select>
         </div>
         
+        <!-- Year Range Filter -->
+        <div class="year-range-filter">
+            <span class="filter-label">Year Range:</span>
+            <input type="number" id="yearFrom" class="year-input" placeholder="From (e.g., 1970)" min="1950" max="2030">
+            <span class="year-separator">to</span>
+            <input type="number" id="yearTo" class="year-input" placeholder="To (e.g., 1980)" min="1950" max="2030">
+            <button id="clearFilters" class="clear-filters-btn">🗑️ Clear All Filters</button>
+        </div>
+        
+        <!-- Active Filters Display -->
+        <div id="activeFilters" class="active-filters-container"></div>
+        
+        <!-- Stats Display -->
         <div class="stats-display" id="statsDisplay"></div>
     </div>
     
