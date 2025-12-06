@@ -13,6 +13,7 @@ let currentLanguage = '';
 let allSongs = [];
 let filteredSongs = [];
 let currentPlayer = null;
+let activeFilters = {};
 
 // Extract YouTube video ID from URL
 function getYouTubeVideoId(url) {
@@ -96,6 +97,14 @@ function parseCSVLine(line) {
     return values.map(v => v.replace(/^"|"$/g, ''));
 }
 
+// Get decade from year
+function getDecade(year) {
+    if (!year) return null;
+    const yearNum = parseInt(year);
+    if (isNaN(yearNum)) return null;
+    return Math.floor(yearNum / 10) * 10;
+}
+
 // Display songs in grid
 function displaySongs(songs) {
     const container = document.getElementById('songsGrid');
@@ -115,6 +124,7 @@ function displaySongs(songs) {
     
     // Update stats
     updateStats(songs.length);
+    updateActiveFiltersDisplay();
 }
 
 // Create song card HTML
@@ -199,8 +209,118 @@ function setupSearch() {
     
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
-        
-        const filtered = allSongs.filter(song => {
+        activeFilters.search = searchTerm;
+        applyAllFilters();
+    });
+}
+
+// Filter functionality
+function setupFilters() {
+    // Type filter
+    const typeFilter = document.getElementById('typeFilter');
+    if (typeFilter) {
+        typeFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Language filter (for Other Languages page)
+    const languageFilter = document.getElementById('languageFilter');
+    if (languageFilter) {
+        languageFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Genre filter
+    const genreFilter = document.getElementById('genreFilter');
+    if (genreFilter) {
+        genreFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Composer filter
+    const composerFilter = document.getElementById('composerFilter');
+    if (composerFilter) {
+        composerFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Co-singer filter
+    const cosingerFilter = document.getElementById('cosingerFilter');
+    if (cosingerFilter) {
+        cosingerFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Decade filter
+    const decadeFilter = document.getElementById('decadeFilter');
+    if (decadeFilter) {
+        decadeFilter.addEventListener('change', applyAllFilters);
+    }
+    
+    // Year range inputs
+    const yearFromInput = document.getElementById('yearFrom');
+    const yearToInput = document.getElementById('yearTo');
+    if (yearFromInput && yearToInput) {
+        yearFromInput.addEventListener('input', applyAllFilters);
+        yearToInput.addEventListener('input', applyAllFilters);
+    }
+    
+    // Clear filters button
+    const clearFiltersBtn = document.getElementById('clearFilters');
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', clearAllFilters);
+    }
+    
+    // Quick filter buttons
+    setupQuickFilters();
+}
+
+// Setup quick filter buttons
+function setupQuickFilters() {
+    const quickFilters = document.querySelectorAll('.quick-filter-btn');
+    quickFilters.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filterType = this.dataset.filter;
+            applyQuickFilter(filterType);
+        });
+    });
+}
+
+// Apply quick filters
+function applyQuickFilter(filterType) {
+    clearAllFilters();
+    
+    const currentYear = new Date().getFullYear();
+    
+    switch(filterType) {
+        case 'recent':
+            // Last 10 years
+            document.getElementById('yearFrom').value = currentYear - 10;
+            document.getElementById('yearTo').value = currentYear;
+            break;
+        case 'classic':
+            // 1960-1990
+            document.getElementById('yearFrom').value = 1960;
+            document.getElementById('yearTo').value = 1990;
+            break;
+        case 'golden':
+            // 1970-1985
+            document.getElementById('yearFrom').value = 1970;
+            document.getElementById('yearTo').value = 1985;
+            break;
+        case 'modern':
+            // 1990-2010
+            document.getElementById('yearFrom').value = 1990;
+            document.getElementById('yearTo').value = 2010;
+            break;
+    }
+    
+    applyAllFilters();
+}
+
+// Apply all filters
+function applyAllFilters() {
+    let filtered = [...allSongs];
+    
+    // Search filter
+    if (activeFilters.search) {
+        const searchTerm = activeFilters.search;
+        filtered = filtered.filter(song => {
             const searchFields = [
                 song.song || '',
                 song.title || '',
@@ -217,49 +337,9 @@ function setupSearch() {
             
             return searchFields.includes(searchTerm);
         });
-        
-        filteredSongs = filtered;
-        displaySongs(filtered);
-    });
-}
-
-// Filter functionality
-function setupFilters() {
+    }
+    
     // Type filter
-    const typeFilter = document.getElementById('typeFilter');
-    if (typeFilter) {
-        typeFilter.addEventListener('change', applyFilters);
-    }
-    
-    // Language filter (for Other Languages page)
-    const languageFilter = document.getElementById('languageFilter');
-    if (languageFilter) {
-        languageFilter.addEventListener('change', applyFilters);
-    }
-    
-    // Genre filter
-    const genreFilter = document.getElementById('genreFilter');
-    if (genreFilter) {
-        genreFilter.addEventListener('change', applyFilters);
-    }
-    
-    // Composer filter
-    const composerFilter = document.getElementById('composerFilter');
-    if (composerFilter) {
-        composerFilter.addEventListener('change', applyFilters);
-    }
-    
-    // Co-singer filter
-    const cosingerFilter = document.getElementById('cosingerFilter');
-    if (cosingerFilter) {
-        cosingerFilter.addEventListener('change', applyFilters);
-    }
-}
-
-// Apply all filters
-function applyFilters() {
-    let filtered = [...allSongs];
-    
     const typeFilter = document.getElementById('typeFilter');
     if (typeFilter && typeFilter.value !== 'all') {
         filtered = filtered.filter(song => 
@@ -267,6 +347,7 @@ function applyFilters() {
         );
     }
     
+    // Language filter
     const languageFilter = document.getElementById('languageFilter');
     if (languageFilter && languageFilter.value !== 'all') {
         filtered = filtered.filter(song => 
@@ -274,6 +355,7 @@ function applyFilters() {
         );
     }
     
+    // Genre filter
     const genreFilter = document.getElementById('genreFilter');
     if (genreFilter && genreFilter.value !== 'all') {
         filtered = filtered.filter(song => 
@@ -281,6 +363,7 @@ function applyFilters() {
         );
     }
     
+    // Composer filter
     const composerFilter = document.getElementById('composerFilter');
     if (composerFilter && composerFilter.value !== 'all') {
         filtered = filtered.filter(song => 
@@ -288,6 +371,7 @@ function applyFilters() {
         );
     }
     
+    // Co-singer filter
     const cosingerFilter = document.getElementById('cosingerFilter');
     if (cosingerFilter && cosingerFilter.value !== 'all') {
         filtered = filtered.filter(song => 
@@ -295,8 +379,116 @@ function applyFilters() {
         );
     }
     
+    // Decade filter
+    const decadeFilter = document.getElementById('decadeFilter');
+    if (decadeFilter && decadeFilter.value !== 'all') {
+        const decade = parseInt(decadeFilter.value);
+        filtered = filtered.filter(song => {
+            const songDecade = getDecade(song.year);
+            return songDecade === decade;
+        });
+    }
+    
+    // Year range filter
+    const yearFrom = document.getElementById('yearFrom');
+    const yearTo = document.getElementById('yearTo');
+    if (yearFrom && yearTo) {
+        const fromYear = parseInt(yearFrom.value) || 0;
+        const toYear = parseInt(yearTo.value) || 9999;
+        
+        if (fromYear > 0 || toYear < 9999) {
+            filtered = filtered.filter(song => {
+                const songYear = parseInt(song.year);
+                if (isNaN(songYear)) return false;
+                return songYear >= fromYear && songYear <= toYear;
+            });
+        }
+    }
+    
     filteredSongs = filtered;
     displaySongs(filtered);
+}
+
+// Clear all filters
+function clearAllFilters() {
+    // Clear dropdowns
+    const selects = document.querySelectorAll('.filter-select');
+    selects.forEach(select => select.value = 'all');
+    
+    // Clear year inputs
+    const yearFrom = document.getElementById('yearFrom');
+    const yearTo = document.getElementById('yearTo');
+    if (yearFrom) yearFrom.value = '';
+    if (yearTo) yearTo.value = '';
+    
+    // Clear search
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) searchInput.value = '';
+    
+    // Clear active filters
+    activeFilters = {};
+    
+    // Reset display
+    filteredSongs = allSongs;
+    displaySongs(allSongs);
+}
+
+// Update active filters display
+function updateActiveFiltersDisplay() {
+    const container = document.getElementById('activeFilters');
+    if (!container) return;
+    
+    const filters = [];
+    
+    // Check each filter
+    const typeFilter = document.getElementById('typeFilter');
+    if (typeFilter && typeFilter.value !== 'all') {
+        filters.push({ label: 'Type', value: typeFilter.options[typeFilter.selectedIndex].text });
+    }
+    
+    const languageFilter = document.getElementById('languageFilter');
+    if (languageFilter && languageFilter.value !== 'all') {
+        filters.push({ label: 'Language', value: languageFilter.options[languageFilter.selectedIndex].text });
+    }
+    
+    const genreFilter = document.getElementById('genreFilter');
+    if (genreFilter && genreFilter.value !== 'all') {
+        filters.push({ label: 'Genre', value: genreFilter.options[genreFilter.selectedIndex].text });
+    }
+    
+    const composerFilter = document.getElementById('composerFilter');
+    if (composerFilter && composerFilter.value !== 'all') {
+        filters.push({ label: 'Composer', value: composerFilter.options[composerFilter.selectedIndex].text });
+    }
+    
+    const cosingerFilter = document.getElementById('cosingerFilter');
+    if (cosingerFilter && cosingerFilter.value !== 'all') {
+        filters.push({ label: 'Co-Singer', value: cosingerFilter.options[cosingerFilter.selectedIndex].text });
+    }
+    
+    const decadeFilter = document.getElementById('decadeFilter');
+    if (decadeFilter && decadeFilter.value !== 'all') {
+        filters.push({ label: 'Decade', value: decadeFilter.options[decadeFilter.selectedIndex].text });
+    }
+    
+    const yearFrom = document.getElementById('yearFrom');
+    const yearTo = document.getElementById('yearTo');
+    if (yearFrom && yearTo && (yearFrom.value || yearTo.value)) {
+        const from = yearFrom.value || '?';
+        const to = yearTo.value || '?';
+        filters.push({ label: 'Year Range', value: `${from} - ${to}` });
+    }
+    
+    if (filters.length === 0) {
+        container.innerHTML = '';
+        container.style.display = 'none';
+        return;
+    }
+    
+    container.style.display = 'flex';
+    container.innerHTML = filters.map(f => 
+        `<span class="active-filter">${f.label}: ${f.value}</span>`
+    ).join('');
 }
 
 // Populate filter dropdowns
@@ -306,6 +498,7 @@ function populateFilters(songs) {
     populateGenreFilter(songs);
     populateComposerFilter(songs);
     populateCosingerFilter(songs);
+    populateDecadeFilter(songs);
 }
 
 function populateTypeFilter(songs) {
@@ -361,6 +554,17 @@ function populateCosingerFilter(songs) {
     
     cosingerFilter.innerHTML = '<option value="all">All Co-Singers</option>' + 
         cosingers.map(c => `<option value="${c}">${c}</option>`).join('');
+}
+
+function populateDecadeFilter(songs) {
+    const decadeFilter = document.getElementById('decadeFilter');
+    if (!decadeFilter) return;
+    
+    const decades = [...new Set(songs.map(s => getDecade(s.year)).filter(d => d !== null))];
+    decades.sort((a, b) => a - b);
+    
+    decadeFilter.innerHTML = '<option value="all">All Decades</option>' + 
+        decades.map(d => `<option value="${d}">${d}s</option>`).join('');
 }
 
 // Update stats display
