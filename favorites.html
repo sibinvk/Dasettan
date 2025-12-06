@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - K.J. Yesudas Tribute</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🎵 K.J. Yesudas</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="malayalam.html">Malayalam</a></li>
+                <li><a href="tamil.html">Tamil</a></li>
+                <li><a href="telugu.html">Telugu</a></li>
+                <li><a href="kannada.html">Kannada</a></li>
+                <li><a href="hindi.html">Hindi</a></li>
+                <li><a href="other.html">Other</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="favorites.html" class="active">My Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>⭐ My Favorites</h1>
+        <p>Your personal collection of K.J. Yesudas songs</p>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="favorites-tabs">
+        <button class="tab-btn active" data-tab="favorites">
+            ⭐ Favorites (<span id="favoritesCount">0</span>)
+        </button>
+        <button class="tab-btn" data-tab="playlists">
+            📝 Playlists (<span id="playlistsCount">0</span>)
+        </button>
+        <button class="tab-btn" data-tab="recent">
+            🕒 Recently Played (<span id="recentCount">0</span>)
+        </button>
+    </div>
+    
+    <!-- Favorites Tab -->
+    <div id="favoritesTab" class="tab-content active">
+        <div class="section-header">
+            <h2>⭐ Favorite Songs</h2>
+            <button id="clearFavorites" class="action-btn danger-btn">
+                🗑️ Clear All Favorites
+            </button>
+        </div>
+        
+        <div id="favoritesSongs" class="songs-container">
+            <div class="songs-grid"></div>
+        </div>
+        
+        <div id="emptyFavorites" class="empty-state">
+            <div class="empty-icon">⭐</div>
+            <h3>No Favorites Yet</h3>
+            <p>Start adding songs to your favorites by clicking the ⭐ icon on any song</p>
+            <a href="malayalam.html" class="action-btn">Browse Songs</a>
+        </div>
+    </div>
+    
+    <!-- Playlists Tab -->
+    <div id="playlistsTab" class="tab-content">
+        <div class="section-header">
+            <h2>📝 My Playlists</h2>
+            <button id="createPlaylist" class="action-btn primary-btn">
+                ➕ Create New Playlist
+            </button>
+        </div>
+        
+        <div id="playlistsList" class="playlists-grid"></div>
+        
+        <div id="emptyPlaylists" class="empty-state">
+            <div class="empty-icon">📝</div>
+            <h3>No Playlists Yet</h3>
+            <p>Create custom playlists to organize your favorite songs</p>
+            <button class="action-btn" onclick="document.getElementById('createPlaylist').click()">
+                Create Your First Playlist
+            </button>
+        </div>
+    </div>
+    
+    <!-- Recently Played Tab -->
+    <div id="recentTab" class="tab-content">
+        <div class="section-header">
+            <h2>🕒 Recently Played</h2>
+            <button id="clearRecent" class="action-btn danger-btn">
+                🗑️ Clear History
+            </button>
+        </div>
+        
+        <div id="recentSongs" class="songs-container">
+            <div class="songs-grid"></div>
+        </div>
+        
+        <div id="emptyRecent" class="empty-state">
+            <div class="empty-icon">🕒</div>
+            <h3>No Recent Songs</h3>
+            <p>Songs you play will appear here</p>
+            <a href="malayalam.html" class="action-btn">Start Listening</a>
+        </div>
+    </div>
+    
+    <!-- Create Playlist Modal -->
+    <div id="createPlaylistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Playlist</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label>Playlist Name:</label>
+                <input type="text" id="playlistName" placeholder="e.g., Malayalam Classics, Devotional Songs" maxlength="50">
+                
+                <label>Description (optional):</label>
+                <textarea id="playlistDescription" placeholder="Add a description for your playlist..." rows="3" maxlength="200"></textarea>
+                
+                <label>Choose an Icon:</label>
+                <div class="icon-picker">
+                    <button class="icon-btn" data-icon="🎵">🎵</button>
+                    <button class="icon-btn" data-icon="❤️">❤️</button>
+                    <button class="icon-btn" data-icon="🎭">🎭</button>
+                    <button class="icon-btn" data-icon="🙏">🙏</button>
+                    <button class="icon-btn" data-icon="🎬">🎬</button>
+                    <button class="icon-btn" data-icon="🌟">🌟</button>
+                    <button class="icon-btn" data-icon="💫">💫</button>
+                    <button class="icon-btn" data-icon="🎤">🎤</button>
+                </div>
+                <input type="hidden" id="selectedIcon" value="🎵">
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn secondary-btn" id="cancelPlaylist">Cancel</button>
+                <button class="action-btn primary-btn" id="savePlaylist">Create Playlist</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- View Playlist Modal -->
+    <div id="viewPlaylistModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <div>
+                    <h2 id="playlistTitle"></h2>
+                    <p id="playlistDesc" class="playlist-description"></p>
+                </div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="playlist-actions">
+                    <button class="action-btn secondary-btn" id="renamePlaylist">✏️ Rename</button>
+                    <button class="action-btn danger-btn" id="deletePlaylist">🗑️ Delete Playlist</button>
+                </div>
+                <div id="playlistSongsContainer" class="songs-container">
+                    <div class="songs-grid"></div>
+                </div>
+                <div id="emptyPlaylistSongs" class="empty-state-small">
+                    <p>No songs in this playlist yet. Browse songs and click "Add to Playlist" to add them here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add to Playlist Modal -->
+    <div id="addToPlaylistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add to Playlist</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="playlistsSelection" class="playlists-selection"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Song</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="shareSongDetails" class="share-details"></div>
+                <label>Share Link:</label>
+                <div class="share-link-container">
+                    <input type="text" id="shareLink" readonly>
+                    <button class="action-btn primary-btn" id="copyLink">📋 Copy</button>
+                </div>
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp" id="shareWhatsApp">
+                        <span>📱</span> WhatsApp
+                    </button>
+                    <button class="share-btn facebook" id="shareFacebook">
+                        <span>👍</span> Facebook
+                    </button>
+                    <button class="share-btn twitter" id="shareTwitter">
+                        <span>🐦</span> Twitter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p><strong>A Tribute to the Legendary K.J. Yesudas</strong></p>
+        <p>Celebrating over 60 years of musical excellence</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 - This is a fan tribute website</p>
+    </footer>
+    
+    <!-- Mini Player -->
+    <div id="miniPlayer" class="mini-player hidden">
+        <div class="mini-player-content">
+            <div class="mini-player-info">
+                <h4 id="playerSongTitle">Song Title</h4>
+                <p id="playerSongDetails">Movie • Singer</p>
+            </div>
+            <div class="mini-player-controls">
+                <button id="minimizePlayer" class="player-btn">▼</button>
+                <button id="closePlayer" class="player-btn">✕</button>
+            </div>
+        </div>
+        <div id="playerContainer" class="player-container"></div>
+    </div>
+    
+    <script src="js/favorites.js"></script>
+</body>
+</html>
