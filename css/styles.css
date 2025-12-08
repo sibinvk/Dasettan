@@ -4486,7 +4486,7 @@ button:focus, a:focus, input:focus, select:focus {
     }
 }
 
-/* Dark Mode Support (Phase 7) 
+/* Dark Mode Support (Phase 7) */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-primary: #1a1a1a;
@@ -4513,7 +4513,7 @@ button:focus, a:focus, input:focus, select:focus {
     footer {
         background: var(--bg-secondary);
     }
-}*/
+}
 
 /* Print Styles */
 @media print {
@@ -5581,4 +5581,15 @@ button:focus, a:focus, input:focus, select:focus {
     .lyrics-action-btn {
         width: 100%;
     }
+}
+/* MOBILE FIXES - Desktop View + Light Theme */
+body { min-width: 1200px; }
+.songs-container { overflow-x: auto; }
+:root { color-scheme: light only !important; }
+@media (prefers-color-scheme: dark) {
+    body { background: #f9f9f9 !important; color: #333 !important; }
+    header, nav, .hero, .page-header, footer { background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important; color: white !important; }
+    .song-card, .stat-card, .language-card { background: white !important; color: #333 !important; }
+    h1, h2, h3 { color: #8B4513 !important; }
+    input, select { background: white !important; color: #333 !important; }
 }
