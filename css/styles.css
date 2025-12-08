@@ -5593,3 +5593,30 @@ body { min-width: 1200px; }
     h1, h2, h3 { color: #8B4513 !important; }
     input, select { background: white !important; color: #333 !important; }
 }
+.mobile-menu-toggle { display: none; position: fixed; top: 1rem; right: 1rem; }
+@media (max-width: 768px) {
+    .mobile-menu-toggle { display: block; }
+    nav .nav-links { position: fixed; right: -100%; }
+    nav .nav-links.active { right: 0; }
+}
+/* FORCE WHITE TEXT ON ALL DARK BACKGROUNDS */
+.page-header, .page-header *, 
+.hero, .hero *,
+header, header *,
+footer, footer * {
+    color: white !important;
+}
+
+.page-header h1, .hero h1 {
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+    .page-header, .hero, header, footer {
+        background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%) !important;
+        color: white !important;
+    }
+    .page-header *, .hero *, header *, footer * {
+        color: white !important;
+    }
+}
