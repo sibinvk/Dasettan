@@ -626,6 +626,16 @@ async function initializePage() {
         }
     }
 }
+// In populateFilters() - Add co-singer splitting
+const coSingers = new Set();
+allSongs.forEach(song => {
+    if (song.CoSinger) {
+        song.CoSinger.split(',').map(s => s.trim()).forEach(s => coSingers.add(s));
+    }
+});
 
+// In applyFilters() - Add co-singer matching
+const matchesCoSinger = !coSinger || (song.CoSinger && 
+    song.CoSinger.split(',').map(s => s.trim()).includes(coSinger));
 // Run on page load
 document.addEventListener('DOMContentLoaded', initializePage);
