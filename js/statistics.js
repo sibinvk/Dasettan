@@ -119,7 +119,7 @@ function updateStatistics(language) {
     updateCareerTimeline(songs);
 }
 
-// Update summary cards
+// ========== UPDATED: Update summary cards with split co-singers ==========
 function updateSummaryCards(songs) {
     document.getElementById('totalSongs').textContent = songs.length.toLocaleString();
     
@@ -129,8 +129,17 @@ function updateSummaryCards(songs) {
     const composers = new Set(songs.map(s => s.composer || s['music director']).filter(Boolean));
     document.getElementById('totalComposers').textContent = composers.size.toLocaleString();
     
-    const cosingers = new Set(songs.map(s => s.cosinger || s['co-singer']).filter(Boolean));
-    document.getElementById('totalCosingers').textContent = cosingers.size.toLocaleString();
+    // Split co-singers by comma to count unique individuals
+    const cosingersSet = new Set();
+    songs.forEach(song => {
+        const cosinger = song.cosinger || song['co-singer'] || '';
+        if (cosinger) {
+            // Split by comma and add each singer individually
+            const singers = cosinger.split(',').map(s => s.trim()).filter(s => s.length > 0);
+            singers.forEach(singer => cosingersSet.add(singer));
+        }
+    });
+    document.getElementById('totalCosingers').textContent = cosingersSet.size.toLocaleString();
     
     const years = songs.map(s => parseInt(s.year)).filter(y => !isNaN(y));
     if (years.length > 0) {
@@ -139,6 +148,7 @@ function updateSummaryCards(songs) {
         document.getElementById('yearSpan').textContent = `${maxYear - minYear}+`;
     }
 }
+// ========== END UPDATED CODE ==========
 
 // Update Songs Per Year Chart
 function updateSongsPerYearChart(songs) {
@@ -388,14 +398,19 @@ function updateTopComposers(songs) {
     `).join('');
 }
 
-// Update Top Co-Singers List
+// ========== UPDATED: Update Top Co-Singers with split counting ==========
 function updateTopCosingers(songs) {
     const cosingerCounts = {};
     
+    // Count each co-singer individually from comma-separated lists
     songs.forEach(song => {
-        const cosinger = song.cosinger || song['co-singer'];
+        const cosinger = song.cosinger || song['co-singer'] || '';
         if (cosinger) {
-            cosingerCounts[cosinger] = (cosingerCounts[cosinger] || 0) + 1;
+            // Split by comma and count each singer separately
+            const singers = cosinger.split(',').map(s => s.trim()).filter(s => s.length > 0);
+            singers.forEach(singer => {
+                cosingerCounts[singer] = (cosingerCounts[singer] || 0) + 1;
+            });
         }
     });
     
@@ -412,6 +427,7 @@ function updateTopCosingers(songs) {
         </div>
     `).join('');
 }
+// ========== END UPDATED CODE ==========
 
 // Update Top Genres List
 function updateTopGenres(songs) {
