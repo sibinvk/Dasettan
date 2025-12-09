@@ -5851,6 +5851,154 @@ h2, h3 {
     animation: pulse 3s ease-in-out infinite;
 }
 
+
+
+/* =================================================================
+   CRITICAL FIX: NAVIGATION VISIBILITY
+   ================================================================= */
+
+/* Ensure header layout is correct */
+header {
+    display: block !important;
+    width: 100% !important;
+}
+
+nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+}
+
+/* Logo must be visible */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    background: var(--gradient-primary) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    z-index: 10 !important;
+}
+
+/* Navigation links MUST be visible */
+.nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nav-links li {
+    display: list-item !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Navigation links - DARK TEAL for better visibility */
+.nav-links a {
+    color: #0A3D3E !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    transition: color 0.3s ease !important;
+    display: inline-block !important;
+    padding: 0.5rem 0 !important;
+    position: relative !important;
+    white-space: nowrap !important;
+}
+
+/* Gold underline animation */
+.nav-links a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%) !important;
+    transition: width 0.3s ease !important;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100% !important;
+}
+
+.nav-links a:hover {
+    color: #1A7073 !important;
+}
+
+.nav-links a.active {
+    color: #0F5456 !important;
+    font-weight: 700 !important;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #0A3D3E;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block !important;
+    }
+    
+    .nav-links {
+        position: fixed !important;
+        right: -100% !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 70% !important;
+        max-width: 300px !important;
+        background: white !important;
+        flex-direction: column !important;
+        padding: 5rem 2rem !important;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2) !important;
+        transition: right 0.3s ease !important;
+        z-index: 9999 !important;
+    }
+    
+    .nav-links.active {
+        right: 0 !important;
+    }
+    
+    .nav-links li {
+        width: 100% !important;
+    }
+    
+    .nav-links a {
+        display: block !important;
+        padding: 1rem 0 !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+/* =================================================================
+   END NAVIGATION FIX
+   ================================================================= */
+
 /* =================================================================
    END PREMIUM ENHANCEMENTS
    ================================================================= */
