@@ -1,43 +1,36 @@
 /* =================================================================
-   K.J. YESUDAS TRIBUTE - PREMIUM TEAL & GOLD THEME
-   Modern Attractive Design - Colors Actually Applied!
+   K.J. YESUDAS TRIBUTE - COMPLETE DARK THEME
+   Every Single Color Converted to Dark
    ================================================================= */
 
 :root {
-    /* Teal Primary Colors */
-    --teal-dark: #0A3D3E;
-    --teal-primary: #0F5456;
-    --teal-medium: #1A7073;
-    --teal-light: #4DB6AC;
-    --teal-lighter: #80CBC4;
-    --teal-subtle: #B2DFDB;
-    --teal-bg: #E0F2F1;
+    /* Dark Backgrounds */
+    --bg-darkest: #0A0E12;
+    --bg-dark: #0D1117;
+    --bg-medium: #161B22;
+    --bg-elevated: #21262D;
+    --bg-card: #2D333B;
     
-    /* Gold Accent Colors */
-    --gold-dark: #B8860B;
-    --gold-primary: #D4AF37;
-    --gold-light: #F4D03F;
-    --gold-lighter: #FFD54F;
-    --gold-subtle: #FFF9E6;
+    /* Bright Teal (replaces brown) */
+    --teal-bright: #14A8A8;
+    --teal-medium: #2DD4BF;
+    --teal-light: #5EEAD4;
+    --teal-glow: rgba(20, 168, 168, 0.4);
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
-    --gradient-header: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 50%, var(--teal-medium) 100%);
-    --gradient-gold: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(15, 84, 86, 0.95) 0%, rgba(26, 112, 115, 0.9) 50%, rgba(77, 182, 172, 0.85) 100%);
+    /* Bright Gold (replaces orange) */
+    --gold-bright: #FFD700;
+    --gold-light: #FFF176;
+    --gold-glow: rgba(255, 215, 0, 0.4);
     
-    /* Neutral Colors */
-    --white: #FFFFFF;
-    --gray-50: #F9FAFB;
-    --gray-100: #F3F4F6;
-    --gray-600: #4B5563;
-    --gray-900: #111827;
+    /* Text Colors */
+    --text-bright: #F0F6FC;
+    --text-normal: #E6EDF3;
+    --text-muted: #9198A1;
+    --text-dim: #636C76;
     
-    /* Shadows with Teal Tint */
-    --shadow-sm: 0 2px 8px rgba(15, 84, 86, 0.1);
-    --shadow-md: 0 4px 16px rgba(15, 84, 86, 0.15);
-    --shadow-lg: 0 8px 24px rgba(15, 84, 86, 0.2);
-    --shadow-xl: 0 12px 32px rgba(15, 84, 86, 0.25);
+    /* Borders */
+    --border-bright: rgba(20, 168, 168, 0.4);
+    --border-dim: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -49,15 +42,15 @@
 body {
     font-family: 'Cambria', serif;
     line-height: 1.6;
-    color: #333;
-    background: #f9f9f9;
+    color: var(--text-bright);
+    background: var(--bg-dark);
 }
 
 /* Header/Navigation */
 header {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -163,7 +156,7 @@ nav {
 .biography-image {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -172,7 +165,7 @@ nav {
     font-size: 1.2rem;
     text-align: center;
     padding: 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     overflow: hidden;
 }
 
@@ -184,7 +177,7 @@ nav {
 }
 
 .biography-content h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -203,8 +196,8 @@ nav {
 }
 
 .award-badge {
-    background: linear-gradient(135deg, var(--gold-primary) 0%, #FFA300 100%);
-    color: var(--teal-primary);
+    background: linear-gradient(135deg, #EFD500 0%, #FFA300 100%);
+    color: var(--teal-bright);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -213,13 +206,13 @@ nav {
 
 /* Languages Section */
 .languages-section {
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     padding: 4rem 2rem;
 }
 
 .languages-section h2 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
@@ -233,11 +226,11 @@ nav {
 }
 
 .language-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     text-decoration: none;
@@ -247,7 +240,7 @@ nav {
 
 .language-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .language-icon {
@@ -256,18 +249,18 @@ nav {
 }
 
 .language-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .language-card p {
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     padding: 3rem 2rem;
     text-align: center;
@@ -276,7 +269,7 @@ nav {
 .page-header h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .page-header p {
@@ -314,7 +307,7 @@ nav {
 }
 
 .search-box input:focus {
-    border-color: var(--teal-primary);
+    border-color: var(--teal-bright);
 }
 
 .filter-section {
@@ -325,7 +318,7 @@ nav {
 }
 
 .filter-label {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: bold;
 }
 
@@ -333,8 +326,8 @@ nav {
     padding: 0.8rem 1rem;
     border: 2px solid var(--teal-medium);
     border-radius: 25px;
-    background: white;
-    color: var(--teal-primary);
+    background: var(--bg-medium);
+    color: var(--teal-bright);
     font-size: 0.9rem;
     cursor: pointer;
     outline: none;
@@ -343,9 +336,9 @@ nav {
 
 .filter-btn {
     padding: 0.8rem 1.5rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
@@ -353,12 +346,12 @@ nav {
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
 .stats-display {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.5rem;
     margin-top: 0.5rem;
     font-weight: bold;
@@ -398,23 +391,23 @@ nav {
 }
 
 .song-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .song-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .song-thumbnail {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -452,7 +445,7 @@ nav {
 
 .song-card.no-video:hover {
     transform: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .song-card.no-video .song-thumbnail {
@@ -481,7 +474,7 @@ nav {
 }
 
 .song-info h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
 }
@@ -495,12 +488,12 @@ nav {
 
 .song-detail {
     display: flex;
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
 .song-detail strong {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     min-width: 100px;
 }
 
@@ -512,8 +505,8 @@ nav {
 }
 
 .tag {
-    background: var(--teal-bg);
-    color: var(--teal-primary);
+    background: var(--bg-elevated);
+    color: var(--teal-bright);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -548,7 +541,7 @@ nav {
 }
 
 .language-badge.sanskrit {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-dark) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, #A0522D 100%);
 }
 
 .language-badge.tulu {
@@ -569,7 +562,7 @@ nav {
 
 .language-badge.bhojpuri {
     background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
-    color: #333;
+    color: var(--text-bright);
 }
 
 .language-badge.english {
@@ -599,8 +592,8 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
     z-index: 2000;
     transition: transform 0.3s ease;
 }
@@ -666,7 +659,7 @@ nav {
 .loading {
     text-align: center;
     padding: 3rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.2rem;
 }
 
@@ -689,7 +682,7 @@ nav {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -758,9 +751,9 @@ footer p {
 
 .quick-filter-btn {
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -769,10 +762,10 @@ footer p {
 }
 
 .quick-filter-btn:hover {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
 }
 
 /* Year Range Filter */
@@ -796,11 +789,11 @@ footer p {
 }
 
 .year-input:focus {
-    border-color: var(--teal-primary);
+    border-color: var(--teal-bright);
 }
 
 .year-separator {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
     font-size: 1rem;
 }
@@ -820,7 +813,7 @@ footer p {
 .clear-filters-btn:hover {
     background: linear-gradient(135deg, #B22222 0%, #8B0000 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
 }
 
 /* Active Filters Display */
@@ -833,7 +826,7 @@ footer p {
 }
 
 .active-filter {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
@@ -892,17 +885,17 @@ nav .active {
 }
 
 .stat-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .stat-icon {
@@ -913,13 +906,13 @@ nav .active {
 .stat-value {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Language Selector */
@@ -935,7 +928,7 @@ nav .active {
 
 .language-selector label {
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.1rem;
 }
 
@@ -950,14 +943,14 @@ nav .active {
 }
 
 .chart-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .chart-card h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -978,14 +971,14 @@ nav .active {
 }
 
 .top-list-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .top-list-card h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1002,14 +995,14 @@ nav .active {
     align-items: center;
     gap: 1rem;
     padding: 0.75rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 10px;
     transition: transform 0.2s;
 }
 
 .top-list-item:hover {
     transform: translateX(5px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .top-list-item .rank {
@@ -1022,12 +1015,12 @@ nav .active {
 
 .top-list-item .name {
     flex: 1;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
 .top-list-item .count {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
     white-space: nowrap;
 }
@@ -1040,17 +1033,17 @@ nav .active {
 }
 
 .timeline-section h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
 }
 
 .timeline-container {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .timeline-milestone {
@@ -1065,20 +1058,20 @@ nav .active {
 .timeline-year {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     min-width: 80px;
 }
 
 .timeline-bar {
     height: 30px;
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     border-radius: 5px;
     transition: width 0.5s ease;
 }
 
 .timeline-count {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-muted);
     white-space: nowrap;
     margin-left: 1rem;
 }
@@ -1140,9 +1133,9 @@ nav .active {
 
 .tab-btn {
     padding: 0.8rem 1.5rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
@@ -1152,11 +1145,11 @@ nav .active {
 
 .tab-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
 }
 
 .tab-btn.active {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -1182,7 +1175,7 @@ nav .active {
 }
 
 .section-header h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
 }
 
@@ -1198,23 +1191,23 @@ nav .active {
 }
 
 .primary-btn {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
 .primary-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
 }
 
 .secondary-btn {
-    background: white;
-    color: var(--teal-primary);
+    background: var(--bg-medium);
+    color: var(--teal-bright);
     border: 2px solid var(--teal-medium);
 }
 
 .secondary-btn:hover {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
 }
 
 .danger-btn {
@@ -1232,9 +1225,9 @@ nav .active {
     margin: 4rem auto;
     text-align: center;
     padding: 3rem;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     display: none;
 }
 
@@ -1251,13 +1244,13 @@ nav .active {
 }
 
 .empty-state h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
 .empty-state p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
 }
@@ -1265,7 +1258,7 @@ nav .active {
 .empty-state-small {
     text-align: center;
     padding: 2rem;
-    color: #666;
+    color: var(--text-muted);
     display: none;
 }
 
@@ -1283,8 +1276,8 @@ nav .active {
     height: 40px;
     border-radius: 50%;
     border: 2px solid var(--teal-medium);
-    background: white;
-    color: var(--teal-primary);
+    background: var(--bg-medium);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -1294,7 +1287,7 @@ nav .active {
 }
 
 .icon-btn:hover {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     transform: scale(1.1);
 }
@@ -1310,18 +1303,18 @@ nav .active {
 }
 
 .playlist-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .playlist-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .playlist-card .playlist-icon {
@@ -1330,13 +1323,13 @@ nav .active {
 }
 
 .playlist-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
 .playlist-song-count {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
@@ -1364,7 +1357,7 @@ nav .active {
 }
 
 .modal-content {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     max-width: 500px;
     width: 100%;
@@ -1378,14 +1371,14 @@ nav .active {
 
 .modal-header {
     padding: 1.5rem;
-    border-bottom: 2px solid var(--teal-bg);
+    border-bottom: 2px solid #f4e4d7;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .modal-header h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin: 0;
 }
@@ -1394,7 +1387,7 @@ nav .active {
     background: none;
     border: none;
     font-size: 2rem;
-    color: #666;
+    color: var(--text-muted);
     cursor: pointer;
     padding: 0;
     width: 40px;
@@ -1405,7 +1398,7 @@ nav .active {
 }
 
 .close-modal:hover {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
 }
 
 .modal-body {
@@ -1414,7 +1407,7 @@ nav .active {
 
 .modal-body label {
     display: block;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
@@ -1432,12 +1425,12 @@ nav .active {
 
 .modal-body input[type="text"]:focus,
 .modal-body textarea:focus {
-    border-color: var(--teal-primary);
+    border-color: var(--teal-bright);
 }
 
 .modal-footer {
     padding: 1.5rem;
-    border-top: 2px solid var(--teal-bg);
+    border-top: 2px solid #f4e4d7;
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -1458,9 +1451,9 @@ nav .active {
 }
 
 .icon-picker .icon-btn.selected {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
-    border-color: var(--teal-primary);
+    border-color: var(--teal-bright);
 }
 
 /* Playlist Selection */
@@ -1472,7 +1465,7 @@ nav .active {
 
 .playlist-option {
     padding: 1rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -1483,7 +1476,7 @@ nav .active {
 
 .playlist-option:hover {
     transform: translateX(5px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .playlist-option .playlist-icon {
@@ -1492,12 +1485,12 @@ nav .active {
 
 .playlist-option .playlist-name {
     flex: 1;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
 .playlist-option .playlist-count {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -1508,7 +1501,7 @@ nav .active {
 }
 
 .share-details h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
@@ -1559,7 +1552,7 @@ nav .active {
 
 .share-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
 }
 
 /* Toast Notification */
@@ -1567,11 +1560,11 @@ nav .active {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s;
@@ -1642,7 +1635,7 @@ nav .active {
 }
 
 .award-stat-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -1652,7 +1645,7 @@ nav .active {
 }
 
 .award-stat-card.national {
-    border-color: var(--gold-primary);
+    border-color: var(--gold-bright);
 }
 
 .award-stat-card.padma {
@@ -1688,20 +1681,20 @@ nav .active {
 .award-stat-card .award-number {
     font-size: 3.5rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .award-stat-card .award-label {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-bright);
     font-weight: 600;
     margin-bottom: 0.3rem;
 }
 
 .award-stat-card .award-sublabel {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Awards Introduction */
@@ -1709,12 +1702,12 @@ nav .active {
     max-width: 1200px;
     margin: 4rem auto;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 20px;
 }
 
 .awards-intro h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1723,13 +1716,13 @@ nav .active {
 .awards-intro p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1rem;
 }
 
 /* Section Title */
 .section-title {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -1738,7 +1731,7 @@ nav .active {
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 3rem;
 }
 
@@ -1757,7 +1750,7 @@ nav .active {
 }
 
 .award-item-large {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 20px;
     padding: 3rem;
     margin-bottom: 3rem;
@@ -1766,7 +1759,7 @@ nav .active {
 }
 
 .award-item-large.padma-vibhushan {
-    border-left: 8px solid var(--gold-primary);
+    border-left: 8px solid var(--gold-bright);
 }
 
 .award-item-large.padma-bhushan {
@@ -1795,7 +1788,7 @@ nav .active {
 
 .award-badge-large {
     display: inline-block;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
@@ -1805,7 +1798,7 @@ nav .active {
 }
 
 .award-content-large h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -1813,19 +1806,19 @@ nav .active {
 .award-description {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1.5rem;
 }
 
 .award-details-box {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     padding: 1.5rem;
     border-radius: 10px;
     margin: 1.5rem 0;
 }
 
 .award-details-box h4 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 1rem;
 }
 
@@ -1844,18 +1837,18 @@ nav .active {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: bold;
 }
 
 .award-ceremony-info {
     font-style: italic;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 1rem;
 }
 
 .historical-note {
-    background: #FFF9E6;
+    background: var(--bg-medium)9E6;
     padding: 1rem;
     border-left: 4px solid var(--teal-medium);
     margin-top: 1rem;
@@ -1874,20 +1867,20 @@ nav .active {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-primary) 100%);
+    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-bright) 100%);
     border-radius: 15px;
     text-align: center;
 }
 
 .achievement-highlight h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
 .achievement-highlight p {
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-bright);
     line-height: 1.8;
 }
 
@@ -1902,24 +1895,24 @@ nav .active {
 }
 
 .award-card-detailed {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     position: relative;
     transition: all 0.3s;
 }
 
 .award-card-detailed:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .award-year-badge-large {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -1928,7 +1921,7 @@ nav .active {
 }
 
 .award-number-badge {
-    background: var(--teal-primary);
+    background: var(--teal-bright);
     color: white;
     width: 40px;
     height: 40px;
@@ -1941,7 +1934,7 @@ nav .active {
 }
 
 .award-card-detailed h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -1978,7 +1971,7 @@ nav .active {
 }
 
 .language-tag.telugu-tag {
-    background: #FFF3E0;
+    background: var(--bg-medium)3E0;
     color: #E65100;
 }
 
@@ -1988,8 +1981,8 @@ nav .active {
 }
 
 .composer-tag {
-    background: var(--teal-bg);
-    color: var(--teal-primary);
+    background: var(--bg-elevated);
+    color: var(--teal-bright);
 }
 
 .director-tag {
@@ -1998,7 +1991,7 @@ nav .active {
 }
 
 .song-context {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
@@ -2010,13 +2003,13 @@ nav .active {
     max-width: 1200px;
     margin: 3rem auto;
     padding: 2rem;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .achievement-summary h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -2036,13 +2029,13 @@ nav .active {
 
 .analysis-label {
     font-size: 1.2rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
     margin: 0.5rem 0;
 }
 
 .analysis-item p {
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Filmfare Section */
@@ -2052,7 +2045,7 @@ nav .active {
     padding: 0 2rem;
     text-align: center;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-bright);
 }
 
 .language-filmfare-section {
@@ -2062,7 +2055,7 @@ nav .active {
 }
 
 .language-heading {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 2rem;
     padding-left: 1rem;
@@ -2076,17 +2069,17 @@ nav .active {
 }
 
 .filmfare-item {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
     display: flex;
     gap: 1.5rem;
     align-items: start;
 }
 
 .year-badge {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
@@ -2097,7 +2090,7 @@ nav .active {
 }
 
 .filmfare-details h4 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
@@ -2109,13 +2102,13 @@ nav .active {
 }
 
 .composer {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
 }
 
 .film-note {
-    color: #333;
+    color: var(--text-bright);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -2124,13 +2117,13 @@ nav .active {
     max-width: 1000px;
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-primary) 100%);
+    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-bright) 100%);
     border-radius: 15px;
     text-align: center;
 }
 
 .filmfare-achievement h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 1rem;
 }
 
@@ -2147,19 +2140,19 @@ nav .active {
     max-width: 1200px;
     margin: 3rem auto;
     padding: 2rem;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .state-section h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .state-intro {
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
@@ -2177,7 +2170,7 @@ nav .active {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--teal-bg);
+    border-bottom: 2px solid #f4e4d7;
 }
 
 .years-grid {
@@ -2187,7 +2180,7 @@ nav .active {
 }
 
 .year-item {
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     padding: 1rem;
     border-radius: 10px;
     display: flex;
@@ -2198,11 +2191,11 @@ nav .active {
 .year-item .year {
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
 }
 
 .year-item .film {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -2213,7 +2206,7 @@ nav .active {
 }
 
 .state-award-entry {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 1rem;
     border-radius: 8px;
     border-left: 4px solid var(--teal-medium);
@@ -2230,17 +2223,17 @@ nav .active {
 }
 
 .doctorate-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     text-align: center;
     transition: all 0.3s;
 }
 
 .doctorate-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .university-logo {
@@ -2249,7 +2242,7 @@ nav .active {
 }
 
 .doctorate-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
@@ -2261,13 +2254,13 @@ nav .active {
 }
 
 .year-awarded {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
 .significance {
     font-size: 0.95rem;
-    color: #333;
+    color: var(--text-bright);
     line-height: 1.6;
 }
 
@@ -2275,7 +2268,7 @@ nav .active {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     border-radius: 10px;
     text-align: center;
 }
@@ -2291,21 +2284,21 @@ nav .active {
 }
 
 .lifetime-award {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--gold-primary);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    border-left: 5px solid var(--gold-bright);
 }
 
 .lifetime-award h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
 .lifetime-award p {
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* International Awards */
@@ -2322,7 +2315,7 @@ nav .active {
     background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .international-card h3 {
@@ -2347,17 +2340,17 @@ nav .active {
 }
 
 .record-item {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: all 0.3s;
 }
 
 .record-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .record-icon {
@@ -2366,13 +2359,13 @@ nav .active {
 }
 
 .record-item h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
 .record-item p {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
@@ -2398,14 +2391,14 @@ nav .active {
 .legacy-quote-large blockquote {
     font-size: 1.4rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     font-style: italic;
     margin-bottom: 1.5rem;
 }
 
 .quote-attribution {
     font-size: 1.2rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
@@ -2416,7 +2409,7 @@ nav .active {
 
 .legacy-stats h3 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -2439,7 +2432,7 @@ nav .active {
 .number-label {
     display: block;
     font-size: 1.1rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
@@ -2487,17 +2480,17 @@ nav .active {
 }
 
 .award-stat-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
     border-top: 5px solid;
 }
 
 .award-stat-card.national {
-    border-color: var(--gold-primary);
+    border-color: var(--gold-bright);
 }
 
 .award-stat-card.padma {
@@ -2522,7 +2515,7 @@ nav .active {
 
 .award-stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .award-stat-card .award-icon {
@@ -2533,20 +2526,20 @@ nav .active {
 .award-stat-card .award-number {
     font-size: 3rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .award-stat-card .award-label {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 0.3rem;
 }
 
 .award-stat-card .award-sublabel {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Awards Intro Section */
@@ -2554,13 +2547,13 @@ nav .active {
     max-width: 1100px;
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 15px;
     border-left: 5px solid var(--teal-medium);
 }
 
 .intro-content h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -2568,7 +2561,7 @@ nav .active {
 .intro-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1rem;
 }
 
@@ -2581,14 +2574,14 @@ nav .active {
 
 .section-title {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #666;
+    color: var(--text-muted);
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -2606,7 +2599,7 @@ nav .active {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(180deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
 }
 
 .award-item {
@@ -2620,16 +2613,16 @@ nav .active {
     min-width: 80px;
     font-size: 2rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     text-align: right;
 }
 
 .award-content {
     flex: 1;
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     border-left: 5px solid var(--teal-medium);
 }
 
@@ -2643,13 +2636,13 @@ nav .active {
 }
 
 .vibhushan-badge {
-    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-    color: var(--teal-primary);
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%);
+    color: var(--teal-bright);
 }
 
 .bhushan-badge {
     background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
-    color: #333;
+    color: var(--text-bright);
 }
 
 .shri-badge {
@@ -2658,7 +2651,7 @@ nav .active {
 }
 
 .award-content h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -2666,12 +2659,12 @@ nav .active {
 .award-description {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1rem;
 }
 
 .award-details-box {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
@@ -2679,11 +2672,11 @@ nav .active {
 
 .award-details-box p {
     margin-bottom: 0.5rem;
-    color: #555;
+    color: var(--text-normal);
 }
 
 .padma-significance {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -2702,17 +2695,17 @@ nav .active {
 
 /* National Awards Grid */
 .national-awards-intro {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-    border-left: 5px solid var(--gold-primary);
+    border-left: 5px solid var(--gold-bright);
 }
 
 .national-awards-intro p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-bright);
 }
 
 .awards-grid {
@@ -2723,10 +2716,10 @@ nav .active {
 }
 
 .award-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
     position: relative;
     overflow: hidden;
@@ -2734,19 +2727,19 @@ nav .active {
 
 .award-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .national-card {
-    border-top: 4px solid var(--gold-primary);
+    border-top: 4px solid var(--gold-bright);
 }
 
 .award-year-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-    color: var(--teal-primary);
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%);
+    color: var(--teal-bright);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -2754,7 +2747,7 @@ nav .active {
 }
 
 .award-ribbon {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -2765,22 +2758,22 @@ nav .active {
 }
 
 .award-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
     margin-top: 0.5rem;
 }
 
 .award-song {
-    color: #333;
+    color: var(--text-bright);
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
 .award-language {
     display: inline-block;
-    background: var(--teal-subtle);
-    color: var(--teal-primary);
+    background: var(--bg-card);
+    color: var(--teal-bright);
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.9rem;
@@ -2790,24 +2783,24 @@ nav .active {
 
 .award-composer,
 .award-director {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
 
 .award-note {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     padding: 0.8rem;
     border-radius: 8px;
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-normal);
     font-style: italic;
     margin-top: 0.8rem;
 }
 
 /* National Awards Legacy */
 .national-awards-legacy {
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     padding: 2rem;
     border-radius: 15px;
     margin-top: 3rem;
@@ -2815,7 +2808,7 @@ nav .active {
 
 .national-awards-legacy h3 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -2828,7 +2821,7 @@ nav .active {
 
 .legacy-stat {
     text-align: center;
-    background: white;
+    background: var(--bg-medium);
     padding: 1.5rem;
     border-radius: 10px;
 }
@@ -2843,18 +2836,18 @@ nav .active {
 .stat-label {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 0.3rem;
 }
 
 .stat-desc {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Filmfare Awards by Language */
 .filmfare-intro {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 3rem;
@@ -2864,7 +2857,7 @@ nav .active {
 .filmfare-intro p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-bright);
 }
 
 .filmfare-by-language {
@@ -2874,10 +2867,10 @@ nav .active {
 }
 
 .language-filmfare-section {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .language-header {
@@ -2888,8 +2881,8 @@ nav .active {
 }
 
 .language-header.malayalam-header {
-    color: var(--teal-primary);
-    border-color: var(--teal-primary);
+    color: var(--teal-bright);
+    border-color: var(--teal-bright);
 }
 
 .language-header.tamil-header {
@@ -2898,8 +2891,8 @@ nav .active {
 }
 
 .language-header.telugu-header {
-    color: var(--gold-primary);
-    border-color: var(--gold-primary);
+    color: var(--gold-bright);
+    border-color: var(--gold-bright);
 }
 
 .language-header.kannada-header {
@@ -2919,20 +2912,20 @@ nav .active {
     align-items: center;
     gap: 1.5rem;
     padding: 1.2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
 .award-list-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .award-year-circle {
     min-width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -2947,14 +2940,14 @@ nav .active {
 }
 
 .award-details h4 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
 .song-name,
 .composer-name {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 0.3rem;
 }
@@ -2966,7 +2959,7 @@ nav .active {
 }
 
 .state-awards-intro p {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 1.5rem;
     border-radius: 10px;
     font-size: 1.1rem;
@@ -2975,15 +2968,15 @@ nav .active {
 }
 
 .state-award-year-group {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
     margin-bottom: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .state-award-year-group h4 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
@@ -3001,13 +2994,13 @@ nav .active {
     align-items: center;
     gap: 1rem;
     padding: 0.8rem;
-    background: #f9f9f9;
+    background: var(--bg-dark);
     border-radius: 8px;
     flex-wrap: wrap;
 }
 
 .year-badge {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
@@ -3018,20 +3011,20 @@ nav .active {
 
 .award-film {
     flex: 1;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
     min-width: 150px;
 }
 
 .award-song-name {
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
     flex: 1;
     min-width: 200px;
 }
 
 .kerala-awards-stats {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -3064,9 +3057,9 @@ nav .active {
     grid-template-columns: 80px 1fr 2fr 1.5fr;
     gap: 1rem;
     padding: 1rem;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
     align-items: center;
 }
 
@@ -3086,21 +3079,21 @@ nav .active {
 }
 
 .ap-year {
-    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-    color: var(--teal-primary);
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%);
+    color: var(--teal-bright);
 }
 
 .tn-film,
 .ka-film,
 .ap-film {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
 .tn-song,
 .ka-song,
 .ap-song {
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
 }
 
@@ -3118,10 +3111,10 @@ nav .active {
 }
 
 .doctorate-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     text-align: center;
     transition: transform 0.3s;
     border-top: 4px solid #9B59B6;
@@ -3129,7 +3122,7 @@ nav .active {
 
 .doctorate-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .doctorate-icon {
@@ -3138,20 +3131,20 @@ nav .active {
 }
 
 .doctorate-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
 .doctorate-year,
 .doctorate-location {
-    color: #666;
+    color: var(--text-muted);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .doctorate-desc {
-    color: #777;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -3165,17 +3158,17 @@ nav .active {
 }
 
 .intl-award-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
     border-left: 5px solid #E74C3C;
 }
 
 .intl-award-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .flag-icon {
@@ -3184,13 +3177,13 @@ nav .active {
 }
 
 .intl-award-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
 .award-org {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
@@ -3202,7 +3195,7 @@ nav .active {
 }
 
 .award-desc {
-    color: #555;
+    color: var(--text-normal);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -3216,20 +3209,20 @@ nav .active {
 }
 
 .decade-block {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
 }
 
 .decade-block:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .decade-header {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 1.5rem;
     font-size: 1.8rem;
@@ -3242,7 +3235,7 @@ nav .active {
 }
 
 .decade-summary {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -3255,7 +3248,7 @@ nav .active {
 
 .decade-highlights li {
     padding: 0.5rem 0;
-    color: #555;
+    color: var(--text-normal);
     border-bottom: 1px solid #eee;
 }
 
@@ -3272,16 +3265,16 @@ nav .active {
 }
 
 .recognition-item {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
 }
 
 .recognition-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .recognition-icon {
@@ -3290,13 +3283,13 @@ nav .active {
 }
 
 .recognition-item h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
 .recognition-item p {
-    color: #555;
+    color: var(--text-normal);
     font-size: 1rem;
     line-height: 1.7;
 }
@@ -3310,7 +3303,7 @@ nav .active {
 }
 
 .record-card {
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
@@ -3320,26 +3313,26 @@ nav .active {
 
 .record-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .record-number {
     font-size: 4rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .record-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 0.5rem;
 }
 
 .record-desc {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 /* Legacy Section */
@@ -3350,12 +3343,12 @@ nav .active {
 }
 
 .legacy-quote {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 3rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .quote-icon {
@@ -3378,16 +3371,16 @@ nav .active {
 }
 
 .legacy-final-note {
-    background: white;
+    background: var(--bg-medium);
     padding: 3rem;
     border-radius: 15px;
     margin-top: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     border-left: 5px solid var(--teal-medium);
 }
 
 .legacy-final-note h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -3395,7 +3388,7 @@ nav .active {
 .legacy-final-note p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1rem;
 }
 
@@ -3449,10 +3442,10 @@ nav .active {
 }
 
 .timeline-stat {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .timeline-stat-number {
@@ -3464,7 +3457,7 @@ nav .active {
 
 .timeline-stat-label {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .timeline-section {
@@ -3480,13 +3473,13 @@ nav .active {
 
 .decade-header h2 {
     font-size: 2.5rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .decade-subtitle {
     font-size: 1.3rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .timeline-container {
@@ -3499,9 +3492,9 @@ nav .active {
     position: relative;
     margin-bottom: 3rem;
     padding: 2rem;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .timeline-event::before {
@@ -3518,11 +3511,11 @@ nav .active {
 }
 
 .timeline-event.major-event {
-    border: 3px solid var(--gold-primary);
+    border: 3px solid var(--gold-bright);
 }
 
 .timeline-event.major-event::before {
-    background: var(--gold-primary);
+    background: var(--gold-bright);
     width: 30px;
     height: 30px;
     left: -3.8rem;
@@ -3530,7 +3523,7 @@ nav .active {
 
 .event-date {
     display: inline-block;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -3539,7 +3532,7 @@ nav .active {
 }
 
 .event-content h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -3547,19 +3540,19 @@ nav .active {
 .event-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1rem;
 }
 
 .event-highlight, .event-detail {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     padding: 1.5rem;
     border-radius: 10px;
     margin-top: 1rem;
 }
 
 .event-highlight {
-    border-left: 5px solid var(--gold-primary);
+    border-left: 5px solid var(--gold-bright);
 }
 
 .event-detail {
@@ -3574,7 +3567,7 @@ nav .active {
 }
 
 .decade-summary h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -3587,7 +3580,7 @@ nav .active {
 }
 
 .summary-item {
-    background: white;
+    background: var(--bg-medium);
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -3602,14 +3595,14 @@ nav .active {
     max-width: 1400px;
     margin: 4rem auto;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border-radius: 20px;
 }
 
 .career-statistics h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 3rem;
 }
 
@@ -3621,10 +3614,10 @@ nav .active {
 }
 
 .mega-stat {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .mega-number {
@@ -3636,7 +3629,7 @@ nav .active {
 
 .mega-label {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-muted);
     font-weight: 600;
 }
 
@@ -3651,10 +3644,10 @@ nav .active {
 }
 
 .collab-stat-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     text-align: center;
 }
 
@@ -3666,7 +3659,7 @@ nav .active {
 
 .collab-section h2 {
     font-size: 2.5rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -3674,7 +3667,7 @@ nav .active {
 .section-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 3rem;
 }
 
@@ -3686,20 +3679,20 @@ nav .active {
 }
 
 .composer-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: all 0.3s;
 }
 
 .composer-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .composer-card.featured {
-    border: 3px solid var(--gold-primary);
+    border: 3px solid var(--gold-bright);
     background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
 }
 
@@ -3709,16 +3702,16 @@ nav .active {
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--teal-bg);
+    border-bottom: 2px solid #f4e4d7;
 }
 
 .composer-header h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
 }
 
 .song-count {
-    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-bright) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -3727,7 +3720,7 @@ nav .active {
 }
 
 .composer-content .period {
-    color: #666;
+    color: var(--text-muted);
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -3777,15 +3770,15 @@ nav .active {
 }
 
 .cosinger-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     text-align: center;
 }
 
 .cosinger-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -3805,14 +3798,14 @@ nav .active {
 }
 
 .director-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .director-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
@@ -3826,22 +3819,22 @@ nav .active {
 
 .about-content h2 {
     font-size: 2.5rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 2rem;
     text-align: center;
 }
 
 .bio-text {
-    background: white;
+    background: var(--bg-medium);
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .bio-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #333;
+    color: var(--text-bright);
     margin-bottom: 1.5rem;
 }
 
@@ -3852,18 +3845,18 @@ nav .active {
 }
 
 .info-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .info-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--teal-bg);
+    border-bottom: 2px solid #f4e4d7;
 }
 
 .info-card p {
@@ -3885,11 +3878,11 @@ nav .active {
 }
 
 .philosophy-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .philosophy-icon {
@@ -3898,7 +3891,7 @@ nav .active {
 }
 
 .philosophy-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 1rem;
 }
 
@@ -3909,10 +3902,10 @@ nav .active {
 }
 
 .achievement-item {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     display: flex;
     gap: 1.5rem;
     align-items: start;
@@ -3924,14 +3917,14 @@ nav .active {
 }
 
 .achievement-text strong {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     display: block;
     margin-bottom: 0.5rem;
 }
 
 .achievement-text p {
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -3954,7 +3947,7 @@ nav .active {
 .impact-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--text-bright);
 }
 
 .quotes-grid {
@@ -3965,10 +3958,10 @@ nav .active {
 }
 
 .quote-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     border-left: 5px solid var(--teal-medium);
 }
 
@@ -3979,19 +3972,19 @@ nav .active {
 }
 
 .quote-author {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
 .academy-info {
-    background: white;
+    background: var(--bg-medium);
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .academy-info h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -4038,7 +4031,7 @@ nav .active {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
     border-radius: 10px;
     margin: 1rem 0;
 }
@@ -4048,8 +4041,8 @@ nav .active {
     height: 45px;
     border-radius: 50%;
     border: 2px solid var(--teal-medium);
-    background: white;
-    color: var(--teal-primary);
+    background: var(--bg-medium);
+    color: var(--teal-bright);
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -4065,7 +4058,7 @@ nav .active {
 }
 
 .control-btn.active {
-    background: var(--teal-primary);
+    background: var(--teal-bright);
     color: white;
 }
 
@@ -4102,7 +4095,7 @@ nav .active {
     min-width: 45px;
     text-align: center;
     font-weight: 600;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
 }
 
 /* Queue Panel */
@@ -4112,8 +4105,8 @@ nav .active {
     top: 0;
     width: 400px;
     height: 100vh;
-    background: white;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    background: var(--bg-medium);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.8);
     transition: right 0.3s;
     z-index: 9999;
     display: flex;
@@ -4126,7 +4119,7 @@ nav .active {
 
 .queue-header {
     padding: 1.5rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -4138,8 +4131,8 @@ nav .active {
 }
 
 .queue-count {
-    background: white;
-    color: var(--teal-primary);
+    background: var(--bg-medium);
+    color: var(--teal-bright);
     padding: 0.3rem 0.6rem;
     border-radius: 15px;
     font-weight: 600;
@@ -4155,7 +4148,7 @@ nav .active {
     display: flex;
     gap: 1rem;
     padding: 1rem;
-    background: #f9f9f9;
+    background: var(--bg-dark);
     border-radius: 10px;
     margin-bottom: 0.5rem;
     align-items: center;
@@ -4184,13 +4177,13 @@ nav .active {
 
 .queue-title {
     font-weight: 600;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.3rem;
 }
 
 .queue-details {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .queue-actions {
@@ -4226,7 +4219,7 @@ nav .active {
 
 .queue-footer {
     padding: 1rem;
-    border-top: 2px solid var(--teal-bg);
+    border-top: 2px solid #f4e4d7;
     display: flex;
     gap: 1rem;
 }
@@ -4341,8 +4334,8 @@ nav .active {
         bottom: 0;
         left: 0;
         right: 0;
-        background: white;
-        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        background: var(--bg-medium);
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.6);
         display: none;
         z-index: 1000;
     }
@@ -4359,13 +4352,13 @@ nav .active {
             flex-direction: column;
             align-items: center;
             padding: 0.5rem;
-            color: #666;
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.75rem;
         }
         
         .mobile-nav-item.active {
-            color: var(--teal-primary);
+            color: var(--teal-bright);
         }
         
         .mobile-nav-icon {
@@ -4407,13 +4400,13 @@ nav .active {
 }
 
 .language-btn {
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -4424,10 +4417,10 @@ nav .active {
     top: 100%;
     right: 0;
     margin-top: 0.5rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.7);
     display: none;
     min-width: 150px;
 }
@@ -4440,7 +4433,7 @@ nav .active {
     padding: 0.8rem 1rem;
     cursor: pointer;
     transition: background 0.3s;
-    border-bottom: 1px solid var(--teal-bg);
+    border-bottom: 1px solid #f4e4d7;
 }
 
 .language-option:last-child {
@@ -4448,11 +4441,11 @@ nav .active {
 }
 
 .language-option:hover {
-    background: var(--teal-bg);
+    background: var(--bg-elevated);
 }
 
 .language-option.active {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     font-weight: 600;
 }
@@ -4584,9 +4577,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .category-btn {
     padding: 0.7rem 1.5rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
@@ -4594,7 +4587,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .category-btn:hover, .category-btn.active {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -4611,17 +4604,17 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .video-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
     cursor: pointer;
 }
 
 .video-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .video-thumbnail {
@@ -4677,7 +4670,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .video-info h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
@@ -4689,7 +4682,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .video-description {
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -4747,7 +4740,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .video-modal-info {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 10px;
     margin-top: 1rem;
@@ -4766,9 +4759,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .timeline-btn {
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -4776,7 +4769,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .timeline-btn:hover, .timeline-btn.active {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     transform: translateY(-2px);
 }
@@ -4793,9 +4786,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .photo-category-btn {
     padding: 0.6rem 1rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -4944,7 +4937,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-selection h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 2rem;
     margin-bottom: 3rem;
 }
@@ -4956,17 +4949,17 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-mode-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
     text-align: center;
 }
 
 .quiz-mode-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .quiz-icon {
@@ -4975,14 +4968,14 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-mode-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .start-quiz-btn {
     margin-top: 1rem;
     padding: 0.7rem 2rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5002,11 +4995,11 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-progress {
-    background: white;
+    background: var(--bg-medium);
     padding: 1.5rem;
     border-radius: 15px;
     margin-bottom: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .progress-bar {
@@ -5019,33 +5012,33 @@ button:focus, a:focus, input:focus, select:focus {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     transition: width 0.5s;
 }
 
 .progress-text {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
 .quiz-score {
     text-align: center;
     font-size: 1.5rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: bold;
     margin-bottom: 2rem;
 }
 
 .question-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .question-card h2 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 2rem;
     font-size: 1.5rem;
     line-height: 1.6;
@@ -5060,9 +5053,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .option-btn {
     padding: 1.2rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.05rem;
@@ -5072,7 +5065,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .option-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, var(--teal-subtle) 0%, #d4c4b4 100%);
+    background: linear-gradient(135deg, #e8d4c4 0%, #d4c4b4 100%);
     transform: translateX(5px);
 }
 
@@ -5091,7 +5084,7 @@ button:focus, a:focus, input:focus, select:focus {
 .next-question-btn {
     width: 100%;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5106,11 +5099,11 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .explanation {
-    background: #FFF9E6;
+    background: var(--bg-medium)9E6;
     padding: 1.5rem;
     border-radius: 10px;
     margin-top: 2rem;
-    border-left: 5px solid var(--gold-primary);
+    border-left: 5px solid var(--gold-bright);
 }
 
 .quiz-results {
@@ -5120,11 +5113,11 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .results-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 3rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .results-icon {
@@ -5139,18 +5132,18 @@ button:focus, a:focus, input:focus, select:focus {
 .score-big {
     font-size: 4rem;
     font-weight: bold;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
 }
 
 .score-label {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
 .results-message {
     font-size: 1.3rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin: 2rem 0;
     font-weight: 600;
 }
@@ -5172,7 +5165,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .stat-label {
-    color: #666;
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
@@ -5191,15 +5184,15 @@ button:focus, a:focus, input:focus, select:focus {
 
 .leaderboard-section h2 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 2rem;
 }
 
 .leaderboard {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
 }
 
 .leaderboard-item {
@@ -5208,7 +5201,7 @@ button:focus, a:focus, input:focus, select:focus {
     gap: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    background: #f9f9f9;
+    background: var(--bg-dark);
     border-radius: 10px;
 }
 
@@ -5219,7 +5212,7 @@ button:focus, a:focus, input:focus, select:focus {
 .player-name {
     flex: 1;
     font-weight: 600;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
 }
 
 .player-score {
@@ -5270,13 +5263,13 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-search-input:focus {
-    border-color: var(--teal-primary);
+    border-color: var(--teal-bright);
     box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
 }
 
 .lyrics-search-button {
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5291,9 +5284,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .search-tips {
     text-align: center;
-    color: #666;
+    color: var(--text-muted);
     padding: 1rem;
-    background: #f9f9f9;
+    background: var(--bg-dark);
     border-radius: 10px;
 }
 
@@ -5309,9 +5302,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .lyrics-lang-btn {
     padding: 0.6rem 1.2rem;
-    background: white;
+    background: var(--bg-medium);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -5329,7 +5322,7 @@ button:focus, a:focus, input:focus, select:focus {
     padding: 0 2rem;
     text-align: center;
     font-size: 1.2rem;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-weight: 600;
 }
 
@@ -5341,7 +5334,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .popular-songs-section h2, .lyrics-results-container h2 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 2rem;
 }
 
@@ -5352,16 +5345,16 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-card {
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
 }
 
 .lyrics-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .lyrics-card-header {
@@ -5372,13 +5365,13 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-card-header h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     font-size: 1.3rem;
     flex: 1;
 }
 
 .lyrics-language-badge {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -5387,7 +5380,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-snippet {
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -5397,7 +5390,7 @@ button:focus, a:focus, input:focus, select:focus {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 2px solid var(--teal-bg);
+    border-top: 2px solid #f4e4d7;
 }
 
 .lyrics-movie {
@@ -5417,7 +5410,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .view-full-lyrics-btn:hover {
-    background: var(--teal-primary);
+    background: var(--teal-bright);
     transform: scale(1.05);
 }
 
@@ -5441,7 +5434,7 @@ button:focus, a:focus, input:focus, select:focus {
 .lyrics-modal-content {
     max-width: 900px;
     margin: 2rem auto;
-    background: white;
+    background: var(--bg-medium);
     border-radius: 15px;
     position: relative;
 }
@@ -5454,13 +5447,13 @@ button:focus, a:focus, input:focus, select:focus {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     z-index: 10001;
 }
 
 .lyrics-modal-header {
     padding: 2rem;
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
     border-radius: 15px 15px 0 0;
 }
@@ -5483,14 +5476,14 @@ button:focus, a:focus, input:focus, select:focus {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    border-bottom: 2px solid var(--teal-bg);
+    border-bottom: 2px solid #f4e4d7;
 }
 
 .lyrics-tab {
     padding: 0.8rem 1.5rem;
     background: none;
     border: none;
-    color: #666;
+    color: var(--text-muted);
     cursor: pointer;
     font-weight: 600;
     border-bottom: 3px solid transparent;
@@ -5498,7 +5491,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-tab:hover, .lyrics-tab.active {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-bottom-color: var(--teal-medium);
 }
 
@@ -5514,7 +5507,7 @@ button:focus, a:focus, input:focus, select:focus {
     white-space: pre-wrap;
     font-family: inherit;
     line-height: 2;
-    color: #333;
+    color: var(--text-bright);
     font-size: 1.1rem;
 }
 
@@ -5523,15 +5516,15 @@ button:focus, a:focus, input:focus, select:focus {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    border-top: 2px solid var(--teal-bg);
+    border-top: 2px solid #f4e4d7;
 }
 
 .lyrics-action-btn {
     flex: 1;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    background: linear-gradient(135deg, #f4e4d7 0%, #e8d4c4 100%);
     border: 2px solid var(--teal-medium);
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
@@ -5539,7 +5532,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-action-btn:hover {
-    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -5551,7 +5544,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .featured-lyrics-section h2 {
     text-align: center;
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 3rem;
 }
 
@@ -5562,17 +5555,17 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-category-card {
-    background: white;
+    background: var(--bg-medium);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     transition: transform 0.3s;
 }
 
 .lyrics-category-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
 .category-icon {
@@ -5581,12 +5574,12 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-category-card h3 {
-    color: var(--teal-primary);
+    color: var(--teal-bright);
     margin-bottom: 0.5rem;
 }
 
 .lyrics-category-card p {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 1rem;
 }
 
@@ -5602,7 +5595,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .browse-category-btn:hover {
-    background: var(--teal-primary);
+    background: var(--teal-bright);
     transform: scale(1.05);
 }
 
@@ -5629,11 +5622,11 @@ body { min-width: 1200px; }
 .songs-container { overflow-x: auto; }
 :root { color-scheme: light only !important; }
 @media (prefers-color-scheme: dark) {
-    body { background: #f9f9f9 !important; color: #333 !important; }
-    header, nav, .hero, .page-header, footer { background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%) !important; color: white !important; }
-    .song-card, .stat-card, .language-card { background: white !important; color: #333 !important; }
-    h1, h2, h3 { color: var(--teal-primary) !important; }
-    input, select { background: white !important; color: #333 !important; }
+    body { background: var(--bg-dark) !important; color: var(--text-bright) !important; }
+    header, nav, .hero, .page-header, footer { background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%) !important; color: white !important; }
+    .song-card, .stat-card, .language-card { background: var(--bg-medium) !important; color: var(--text-bright) !important; }
+    h1, h2, h3 { color: var(--teal-bright) !important; }
+    input, select { background: var(--bg-medium) !important; color: var(--text-bright) !important; }
 }
 .mobile-menu-toggle { display: none; position: fixed; top: 1rem; right: 1rem; }
 @media (max-width: 768px) {
@@ -5655,7 +5648,7 @@ footer, footer * {
 
 @media (prefers-color-scheme: dark) {
     .page-header, .hero, header, footer {
-        background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%) !important;
+        background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%) !important;
         color: white !important;
     }
     .page-header *, .hero *, header *, footer * {
@@ -5665,340 +5658,237 @@ footer, footer * {
 
 
 /* =================================================================
-   PREMIUM ENHANCEMENTS - GLASSMORPHIC & MODERN EFFECTS
+   CRITICAL DARK THEME OVERRIDES - FORCE DARK EVERYWHERE
    ================================================================= */
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
+/* Force body dark */
+body {
+    background: var(--bg-dark) !important;
+    color: var(--text-normal) !important;
 }
 
-/* Glassmorphic Header */
+/* Force header dark with glass */
 header {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 2px 20px rgba(15, 84, 86, 0.1);
+    background: rgba(22, 27, 34, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--border-bright) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
 }
 
-header.scrolled {
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 4px 30px rgba(15, 84, 86, 0.15);
-}
-
-/* Logo gradient text */
-.logo {
-    background: var(--gradient-primary) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    font-weight: bold;
-}
-
-/* Nav links with teal color */
+/* Bright white navigation */
 .nav-links a {
-    color: var(--teal-primary) !important;
-    font-weight: 600;
-    position: relative;
-}
-
-/* Gold underline animation */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--gradient-gold);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
+    color: var(--text-bright) !important;
 }
 
 .nav-links a:hover {
-    color: var(--teal-medium) !important;
-    opacity: 1 !important;
+    color: var(--teal-light) !important;
+    text-shadow: 0 0 15px var(--teal-glow) !important;
 }
 
-/* Enhanced Hero Section */
+/* Dark hero with glow */
 .hero {
-    background: var(--gradient-hero) !important;
-    min-height: 650px !important;
+    background: linear-gradient(135deg, 
+                rgba(13, 17, 23, 0.98) 0%, 
+                rgba(10, 77, 78, 0.95) 50%, 
+                rgba(20, 168, 168, 0.9) 100%) !important;
 }
 
-/* Gold gradient hero title */
+/* Glowing gold hero title */
 .hero h1 {
-    background: var(--gradient-gold) !important;
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    font-weight: 700 !important;
+    filter: drop-shadow(0 0 25px var(--gold-glow)) !important;
 }
 
-/* Glassmorphic stat cards */
+/* Dark glass stat cards */
+.hero-stats,
+.stats-grid {
+    background: transparent !important;
+}
+
 .stat {
-    background: rgba(255, 255, 255, 0.25) !important;
+    background: rgba(45, 51, 59, 0.7) !important;
     backdrop-filter: blur(15px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border: 1px solid var(--border-bright) !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6), 0 0 20px var(--teal-glow) !important;
 }
 
-/* Gold gradient stat numbers */
 .stat-number {
-    background: var(--gradient-gold) !important;
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
+    filter: drop-shadow(0 0 20px var(--gold-glow)) !important;
 }
 
-/* Gold gradient award badges */
-.award-badge {
-    background: var(--gradient-gold) !important;
-    color: var(--teal-dark) !important;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+.stat-label {
+    color: var(--text-muted) !important;
 }
 
-.award-badge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+/* Dark sections */
+section {
+    background: var(--bg-dark) !important;
 }
 
-/* Enhanced shadows on cards */
-.song-card,
+.languages-section,
+.biography,
+.songs-section {
+    background: var(--bg-dark) !important;
+}
+
+/* Dark cards */
 .language-card,
+.song-card,
+.award-card,
 .stat-card {
-    box-shadow: var(--shadow-md) !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-dim) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
 }
 
-.song-card:hover,
 .language-card:hover,
-.stat-card:hover {
-    box-shadow: var(--shadow-xl) !important;
-    transform: translateY(-8px) scale(1.02) !important;
+.song-card:hover,
+.award-card:hover {
+    border-color: var(--border-bright) !important;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8), 0 0 25px var(--teal-glow) !important;
 }
 
-/* Mini player gradient */
-.mini-player {
-    background: var(--gradient-header) !important;
+/* Bright headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--teal-light) !important;
 }
 
-/* Footer gradient */
-footer {
-    background: var(--gradient-header) !important;
+/* Card text */
+.song-card h3,
+.language-card h3,
+.award-card h3 {
+    color: var(--teal-light) !important;
 }
 
-/* Page header gradient */
-.page-header {
-    background: var(--gradient-primary) !important;
+.song-detail,
+.language-card p,
+.award-card p {
+    color: var(--text-muted) !important;
 }
 
-/* Button hover effects */
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--gradient-primary) !important;
-    color: white !important;
+.song-detail strong {
+    color: var(--teal-bright) !important;
 }
 
-/* Language section background */
-.languages-section {
-    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%) !important;
+/* Dark inputs */
+input,
+select,
+textarea,
+.search-box {
+    background: var(--bg-elevated) !important;
+    border: 2px solid var(--border-dim) !important;
+    color: var(--text-bright) !important;
 }
 
-/* Enhanced input focus */
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-dim) !important;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: var(--teal-medium) !important;
-    box-shadow: 0 0 0 3px rgba(26, 112, 115, 0.1) !important;
+    border-color: var(--teal-bright) !important;
+    box-shadow: 0 0 0 3px var(--teal-glow) !important;
 }
 
-/* Teal text colors for headings */
-h2, h3 {
-    color: var(--teal-primary) !important;
+/* Dark buttons */
+button,
+.btn,
+.filter-btn {
+    background: var(--bg-elevated) !important;
+    border: 2px solid var(--teal-bright) !important;
+    color: var(--text-bright) !important;
 }
 
-/* Animated loading */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+button:hover,
+.btn:hover,
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%) !important;
+    box-shadow: 0 4px 20px var(--teal-glow) !important;
 }
 
-.hero-stats {
-    animation: fadeInUp 1s ease-out 0.5s both;
+/* Gold badges */
+.award-badge,
+.badge {
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%) !important;
+    color: var(--bg-darkest) !important;
+    box-shadow: 0 4px 20px var(--gold-glow) !important;
 }
 
-/* Icon pulse animation */
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+/* Dark page headers */
+.page-header {
+    background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8) !important;
 }
 
-.language-icon {
-    animation: pulse 3s ease-in-out infinite;
+/* Dark mini player */
+.mini-player {
+    background: rgba(22, 27, 34, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border-top: 1px solid var(--border-bright) !important;
+    box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.8) !important;
 }
 
-
-
-/* =================================================================
-   CRITICAL FIX: NAVIGATION VISIBILITY
-   ================================================================= */
-
-/* Ensure header layout is correct */
-header {
-    display: block !important;
-    width: 100% !important;
+/* Dark footer */
+footer {
+    background: var(--bg-medium) !important;
+    border-top: 1px solid var(--border-dim) !important;
+    color: var(--text-muted) !important;
 }
 
-nav {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 2rem !important;
+/* Dark modals */
+.modal-content,
+.dialog {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-bright) !important;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9) !important;
 }
 
-/* Logo must be visible */
-.logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    font-size: 1.5rem !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-    background: var(--gradient-primary) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    z-index: 10 !important;
+/* Dark tables */
+table {
+    background: var(--bg-medium) !important;
+    color: var(--text-normal) !important;
 }
 
-/* Navigation links MUST be visible */
-.nav-links {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 2rem !important;
-    list-style: none !important;
-    align-items: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+th {
+    background: var(--bg-elevated) !important;
+    color: var(--teal-light) !important;
+    border-bottom: 2px solid var(--teal-bright) !important;
 }
 
-.nav-links li {
-    display: list-item !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+td {
+    border-bottom: 1px solid var(--border-dim) !important;
 }
 
-/* Navigation links - DARK TEAL for better visibility */
-.nav-links a {
-    color: #0A3D3E !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    transition: color 0.3s ease !important;
-    display: inline-block !important;
-    padding: 0.5rem 0 !important;
-    position: relative !important;
-    white-space: nowrap !important;
+tr:hover {
+    background: var(--bg-elevated) !important;
 }
 
-/* Gold underline animation */
-.nav-links a::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 0 !important;
-    height: 2px !important;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%) !important;
-    transition: width 0.3s ease !important;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100% !important;
-}
-
-.nav-links a:hover {
-    color: #1A7073 !important;
-}
-
-.nav-links a.active {
-    color: #0F5456 !important;
-    font-weight: 700 !important;
-}
-
-/* Mobile menu toggle */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #0A3D3E;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-/* Mobile responsive */
+/* Mobile menu dark */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block !important;
-    }
-    
     .nav-links {
-        position: fixed !important;
-        right: -100% !important;
-        top: 0 !important;
-        height: 100vh !important;
-        width: 70% !important;
-        max-width: 300px !important;
-        background: white !important;
-        flex-direction: column !important;
-        padding: 5rem 2rem !important;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2) !important;
-        transition: right 0.3s ease !important;
-        z-index: 9999 !important;
-    }
-    
-    .nav-links.active {
-        right: 0 !important;
-    }
-    
-    .nav-links li {
-        width: 100% !important;
-    }
-    
-    .nav-links a {
-        display: block !important;
-        padding: 1rem 0 !important;
-        font-size: 1.1rem !important;
+        background: var(--bg-medium) !important;
+        border-left: 1px solid var(--border-bright) !important;
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.9) !important;
     }
 }
 
-/* =================================================================
-   END NAVIGATION FIX
-   ================================================================= */
+/* Glowing effects */
+.glow-teal {
+    box-shadow: 0 0 20px var(--teal-glow) !important;
+}
+
+.glow-gold {
+    box-shadow: 0 0 20px var(--gold-glow) !important;
+}
 
 /* =================================================================
-   END PREMIUM ENHANCEMENTS
+   END DARK THEME OVERRIDES
    ================================================================= */
