@@ -141,6 +141,13 @@ function createSongCard(song) {
     const youtubeUrl = song.youtube || song['youtube link'] || song.link || '';
     const hasVideo = !!youtubeUrl;
     
+    // Format co-singers nicely (split by comma and rejoin with proper spacing)
+    let cosingerDisplay = cosinger;
+    if (cosinger) {
+        const singers = cosinger.split(',').map(s => s.trim()).filter(s => s.length > 0);
+        cosingerDisplay = singers.join(', ');
+    }
+    
     return `
         <div class="song-card ${!hasVideo ? 'no-video' : ''}" data-genre="${genre}" data-type="${type}">
             <div class="song-thumbnail">
@@ -155,7 +162,7 @@ function createSongCard(song) {
                     ${movie ? `<div class="song-detail"><strong>Movie:</strong> ${movie}</div>` : ''}
                     ${year ? `<div class="song-detail"><strong>Year:</strong> ${year}</div>` : ''}
                     ${composer ? `<div class="song-detail"><strong>Music:</strong> ${composer}</div>` : ''}
-                    ${cosinger ? `<div class="song-detail"><strong>Co-Singer:</strong> ${cosinger}</div>` : ''}
+                    ${cosingerDisplay ? `<div class="song-detail"><strong>Co-Singer:</strong> ${cosingerDisplay}</div>` : ''}
                 </div>
                 ${genre ? `<div class="tags"><span class="tag">${genre}</span></div>` : ''}
             </div>
@@ -371,13 +378,20 @@ function applyAllFilters() {
         );
     }
     
-    // Co-singer filter
+    // ========== UPDATED: Co-singer filter - splits comma-separated values ==========
     const cosingerFilter = document.getElementById('cosingerFilter');
     if (cosingerFilter && cosingerFilter.value !== 'all') {
-        filtered = filtered.filter(song => 
-            (song.cosinger || song['co-singer'] || '').toLowerCase().includes(cosingerFilter.value.toLowerCase())
-        );
+        const selectedSinger = cosingerFilter.value.toLowerCase();
+        filtered = filtered.filter(song => {
+            const cosinger = song.cosinger || song['co-singer'] || '';
+            if (!cosinger) return false;
+            
+            // Split by comma and check if selected singer is in the list
+            const singers = cosinger.split(',').map(s => s.trim().toLowerCase());
+            return singers.includes(selectedSinger);
+        });
     }
+    // ========== END UPDATED CODE ==========
     
     // Decade filter
     const decadeFilter = document.getElementById('decadeFilter');
@@ -545,16 +559,30 @@ function populateComposerFilter(songs) {
         composers.map(c => `<option value="${c}">${c}</option>`).join('');
 }
 
+// ========== UPDATED: populateCosingerFilter - splits comma-separated values ==========
 function populateCosingerFilter(songs) {
     const cosingerFilter = document.getElementById('cosingerFilter');
     if (!cosingerFilter) return;
     
-    const cosingers = [...new Set(songs.map(s => s.cosinger || s['co-singer']).filter(Boolean))];
-    cosingers.sort();
+    // Collect all individual co-singers by splitting comma-separated values
+    const cosingersSet = new Set();
+    
+    songs.forEach(song => {
+        const cosinger = song.cosinger || song['co-singer'] || '';
+        if (cosinger) {
+            // Split by comma, trim whitespace, and add each singer individually
+            const singers = cosinger.split(',').map(s => s.trim()).filter(s => s.length > 0);
+            singers.forEach(singer => cosingersSet.add(singer));
+        }
+    });
+    
+    // Convert to array and sort alphabetically
+    const cosingers = [...cosingersSet].sort();
     
     cosingerFilter.innerHTML = '<option value="all">All Co-Singers</option>' + 
         cosingers.map(c => `<option value="${c}">${c}</option>`).join('');
 }
+// ========== END UPDATED CODE ==========
 
 function populateDecadeFilter(songs) {
     const decadeFilter = document.getElementById('decadeFilter');
@@ -626,16 +654,6 @@ async function initializePage() {
         }
     }
 }
-// In populateFilters() - Add co-singer splitting
-const coSingers = new Set();
-allSongs.forEach(song => {
-    if (song.CoSinger) {
-        song.CoSinger.split(',').map(s => s.trim()).forEach(s => coSingers.add(s));
-    }
-});
 
-// In applyFilters() - Add co-singer matching
-const matchesCoSinger = !coSinger || (song.CoSinger && 
-    song.CoSinger.split(',').map(s => s.trim()).includes(coSinger));
 // Run on page load
 document.addEventListener('DOMContentLoaded', initializePage);
