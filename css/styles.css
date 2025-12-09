@@ -1,16 +1,15 @@
 /* =================================================================
    K.J. YESUDAS TRIBUTE - PREMIUM TEAL & GOLD THEME
-   Complete 5,622 lines with APPLIED color theme
-   Attractive Modern Design with Teal & Gold
+   Modern Attractive Design - Colors Actually Applied!
    ================================================================= */
 
-/* Premium Color Variables */
 :root {
     /* Teal Primary Colors */
     --teal-dark: #0A3D3E;
     --teal-primary: #0F5456;
-    --teal-light: #1A7073;
-    --teal-lighter: #4DB6AC;
+    --teal-medium: #1A7073;
+    --teal-light: #4DB6AC;
+    --teal-lighter: #80CBC4;
     --teal-subtle: #B2DFDB;
     --teal-bg: #E0F2F1;
     
@@ -18,27 +17,27 @@
     --gold-dark: #B8860B;
     --gold-primary: #D4AF37;
     --gold-light: #F4D03F;
+    --gold-lighter: #FFD54F;
     --gold-subtle: #FFF9E6;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
-    --gradient-header: linear-gradient(135deg, #0A3D3E 0%, #0F5456 50%, #1A7073 100%);
-    --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(15, 84, 86, 0.95) 0%, rgba(26, 112, 115, 0.9) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
+    --gradient-header: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 50%, var(--teal-medium) 100%);
+    --gradient-gold: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(15, 84, 86, 0.95) 0%, rgba(26, 112, 115, 0.9) 50%, rgba(77, 182, 172, 0.85) 100%);
     
-    /* Typography */
-    --font-primary: 'Cambria', serif;
-    --font-display: 'Playfair Display', serif;
-    --font-sans: 'Raleway', sans-serif;
+    /* Neutral Colors */
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-600: #4B5563;
+    --gray-900: #111827;
     
-    /* Shadows */
+    /* Shadows with Teal Tint */
     --shadow-sm: 0 2px 8px rgba(15, 84, 86, 0.1);
     --shadow-md: 0 4px 16px rgba(15, 84, 86, 0.15);
     --shadow-lg: 0 8px 24px rgba(15, 84, 86, 0.2);
     --shadow-xl: 0 12px 32px rgba(15, 84, 86, 0.25);
-    
-    /* Transitions */
-    --transition: 0.3s ease;
 }
 
 * {
@@ -56,9 +55,7 @@ body {
 
 /* Header/Navigation */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
@@ -76,10 +73,7 @@ nav {
 }
 
 .logo {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -93,8 +87,7 @@ nav {
 }
 
 .nav-links a {
-    color: #0F5456;
-    font-weight: 600;
+    color: white;
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -105,10 +98,9 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(15, 84, 86, 0.9) 0%, rgba(26, 112, 115, 0.85) 100%),
+    background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(210, 105, 30, 0.7)),
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f4e4d7" width="1200" height="600"/><path fill="%23d4a574" d="M0 300L50 320L100 300L150 310L200 290L250 305L300 295L350 315L400 300L450 310L500 295L550 305L600 300L650 310L700 295L750 305L800 300L850 310L900 295L950 305L1000 300L1050 310L1100 295L1150 305L1200 300V600H0Z"/></svg>') center/cover;
-    min-height: 650px;
-    background: linear-gradient(135deg, rgba(15, 84, 86, 0.95) 0%, rgba(26, 112, 115, 0.9) 50%, rgba(77, 182, 172, 0.85) 100%) !important;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,10 +115,6 @@ nav {
 
 .hero h1 {
     font-size: 3.5rem;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -145,9 +133,7 @@ nav {
 }
 
 .stat {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255,255,255,0.2);
     padding: 1rem 2rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -155,10 +141,6 @@ nav {
 
 .stat-number {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     font-weight: bold;
     display: block;
 }
@@ -181,7 +163,7 @@ nav {
 .biography-image {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -190,7 +172,7 @@ nav {
     font-size: 1.2rem;
     text-align: center;
     padding: 0;
-    box-shadow: 0 12px 35px rgba(15, 84, 86, 0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     overflow: hidden;
 }
 
@@ -202,7 +184,7 @@ nav {
 }
 
 .biography-content h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -221,8 +203,8 @@ nav {
 }
 
 .award-badge {
-    background: linear-gradient(135deg, #D4AF37 0%, #FFA300 100%);
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, #FFA300 100%);
+    color: var(--teal-primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -231,13 +213,13 @@ nav {
 
 /* Languages Section */
 .languages-section {
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     padding: 4rem 2rem;
 }
 
 .languages-section h2 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
@@ -255,7 +237,7 @@ nav {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(15, 84, 86, 0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     text-decoration: none;
@@ -274,7 +256,7 @@ nav {
 }
 
 .language-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -285,7 +267,7 @@ nav {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     padding: 3rem 2rem;
     text-align: center;
@@ -324,7 +306,7 @@ nav {
 .search-box input {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 25px;
     font-size: 1rem;
     outline: none;
@@ -332,7 +314,7 @@ nav {
 }
 
 .search-box input:focus {
-    border-color: #0F5456;
+    border-color: var(--teal-primary);
 }
 
 .filter-section {
@@ -343,16 +325,16 @@ nav {
 }
 
 .filter-label {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: bold;
 }
 
 .filter-select {
     padding: 0.8rem 1rem;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 25px;
     background: white;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 0.9rem;
     cursor: pointer;
     outline: none;
@@ -362,8 +344,8 @@ nav {
 .filter-btn {
     padding: 0.8rem 1.5rem;
     background: white;
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s;
@@ -371,7 +353,7 @@ nav {
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -432,7 +414,7 @@ nav {
 .song-thumbnail {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -499,7 +481,7 @@ nav {
 }
 
 .song-info h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
 }
@@ -518,7 +500,7 @@ nav {
 }
 
 .song-detail strong {
-    color: #0F5456;
+    color: var(--teal-primary);
     min-width: 100px;
 }
 
@@ -530,8 +512,8 @@ nav {
 }
 
 .tag {
-    background: #E0F2F1;
-    color: #0F5456;
+    background: var(--teal-bg);
+    color: var(--teal-primary);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -566,7 +548,7 @@ nav {
 }
 
 .language-badge.sanskrit {
-    background: linear-gradient(135deg, #0F5456 0%, #0A3D3E 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-dark) 100%);
 }
 
 .language-badge.tulu {
@@ -617,7 +599,7 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
     z-index: 2000;
     transition: transform 0.3s ease;
@@ -684,7 +666,7 @@ nav {
 .loading {
     text-align: center;
     padding: 3rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
 }
 
@@ -707,7 +689,7 @@ nav {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -776,9 +758,9 @@ footer p {
 
 .quick-filter-btn {
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -787,7 +769,7 @@ footer p {
 }
 
 .quick-filter-btn:hover {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -806,7 +788,7 @@ footer p {
 .year-input {
     width: 150px;
     padding: 0.6rem 0.8rem;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 20px;
     font-size: 0.9rem;
     outline: none;
@@ -814,11 +796,11 @@ footer p {
 }
 
 .year-input:focus {
-    border-color: #0F5456;
+    border-color: var(--teal-primary);
 }
 
 .year-separator {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
     font-size: 1rem;
 }
@@ -851,7 +833,7 @@ footer p {
 }
 
 .active-filter {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
@@ -931,7 +913,7 @@ nav .active {
 .stat-value {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -953,7 +935,7 @@ nav .active {
 
 .language-selector label {
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.1rem;
 }
 
@@ -975,7 +957,7 @@ nav .active {
 }
 
 .chart-card h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1003,7 +985,7 @@ nav .active {
 }
 
 .top-list-card h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1020,7 +1002,7 @@ nav .active {
     align-items: center;
     gap: 1rem;
     padding: 0.75rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 10px;
     transition: transform 0.2s;
 }
@@ -1033,14 +1015,14 @@ nav .active {
 .top-list-item .rank {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     min-width: 50px;
     text-align: center;
 }
 
 .top-list-item .name {
     flex: 1;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -1058,7 +1040,7 @@ nav .active {
 }
 
 .timeline-section h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -1077,19 +1059,19 @@ nav .active {
     gap: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-left: 4px solid #1A7073;
+    border-left: 4px solid var(--teal-medium);
 }
 
 .timeline-year {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     min-width: 80px;
 }
 
 .timeline-bar {
     height: 30px;
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     border-radius: 5px;
     transition: width 0.5s ease;
 }
@@ -1159,8 +1141,8 @@ nav .active {
 .tab-btn {
     padding: 0.8rem 1.5rem;
     background: white;
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
@@ -1174,7 +1156,7 @@ nav .active {
 }
 
 .tab-btn.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -1200,7 +1182,7 @@ nav .active {
 }
 
 .section-header h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
 }
 
@@ -1216,7 +1198,7 @@ nav .active {
 }
 
 .primary-btn {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -1227,12 +1209,12 @@ nav .active {
 
 .secondary-btn {
     background: white;
-    color: #0F5456;
-    border: 2px solid #1A7073;
+    color: var(--teal-primary);
+    border: 2px solid var(--teal-medium);
 }
 
 .secondary-btn:hover {
-    background: #E0F2F1;
+    background: var(--teal-bg);
 }
 
 .danger-btn {
@@ -1269,7 +1251,7 @@ nav .active {
 }
 
 .empty-state h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
@@ -1300,9 +1282,9 @@ nav .active {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     background: white;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -1312,7 +1294,7 @@ nav .active {
 }
 
 .icon-btn:hover {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     transform: scale(1.1);
 }
@@ -1348,7 +1330,7 @@ nav .active {
 }
 
 .playlist-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
@@ -1396,14 +1378,14 @@ nav .active {
 
 .modal-header {
     padding: 1.5rem;
-    border-bottom: 2px solid #E0F2F1;
+    border-bottom: 2px solid var(--teal-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .modal-header h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin: 0;
 }
@@ -1423,7 +1405,7 @@ nav .active {
 }
 
 .close-modal:hover {
-    color: #0F5456;
+    color: var(--teal-primary);
 }
 
 .modal-body {
@@ -1432,7 +1414,7 @@ nav .active {
 
 .modal-body label {
     display: block;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
@@ -1442,7 +1424,7 @@ nav .active {
 .modal-body textarea {
     width: 100%;
     padding: 0.7rem;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
@@ -1450,12 +1432,12 @@ nav .active {
 
 .modal-body input[type="text"]:focus,
 .modal-body textarea:focus {
-    border-color: #0F5456;
+    border-color: var(--teal-primary);
 }
 
 .modal-footer {
     padding: 1.5rem;
-    border-top: 2px solid #E0F2F1;
+    border-top: 2px solid var(--teal-bg);
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -1476,9 +1458,9 @@ nav .active {
 }
 
 .icon-picker .icon-btn.selected {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
-    border-color: #0F5456;
+    border-color: var(--teal-primary);
 }
 
 /* Playlist Selection */
@@ -1490,7 +1472,7 @@ nav .active {
 
 .playlist-option {
     padding: 1rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -1510,7 +1492,7 @@ nav .active {
 
 .playlist-option .playlist-name {
     flex: 1;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -1526,7 +1508,7 @@ nav .active {
 }
 
 .share-details h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -1585,7 +1567,7 @@ nav .active {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 1rem 1.5rem;
     border-radius: 10px;
@@ -1670,7 +1652,7 @@ nav .active {
 }
 
 .award-stat-card.national {
-    border-color: #D4AF37;
+    border-color: var(--gold-primary);
 }
 
 .award-stat-card.padma {
@@ -1706,7 +1688,7 @@ nav .active {
 .award-stat-card .award-number {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -1727,12 +1709,12 @@ nav .active {
     max-width: 1200px;
     margin: 4rem auto;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 20px;
 }
 
 .awards-intro h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1747,7 +1729,7 @@ nav .active {
 
 /* Section Title */
 .section-title {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -1784,7 +1766,7 @@ nav .active {
 }
 
 .award-item-large.padma-vibhushan {
-    border-left: 8px solid #D4AF37;
+    border-left: 8px solid var(--gold-primary);
 }
 
 .award-item-large.padma-bhushan {
@@ -1801,7 +1783,7 @@ nav .active {
     right: 2rem;
     font-size: 3rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     opacity: 0.3;
 }
 
@@ -1813,7 +1795,7 @@ nav .active {
 
 .award-badge-large {
     display: inline-block;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
@@ -1823,7 +1805,7 @@ nav .active {
 }
 
 .award-content-large h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
@@ -1836,14 +1818,14 @@ nav .active {
 }
 
 .award-details-box {
-    background: #E0F2F1;
+    background: var(--teal-bg);
     padding: 1.5rem;
     border-radius: 10px;
     margin: 1.5rem 0;
 }
 
 .award-details-box h4 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 1rem;
 }
 
@@ -1862,7 +1844,7 @@ nav .active {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: bold;
 }
 
@@ -1875,7 +1857,7 @@ nav .active {
 .historical-note {
     background: #FFF9E6;
     padding: 1rem;
-    border-left: 4px solid #1A7073;
+    border-left: 4px solid var(--teal-medium);
     margin-top: 1rem;
     font-style: italic;
 }
@@ -1892,13 +1874,13 @@ nav .active {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFE5B4 0%, #D4AF37 100%);
+    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-primary) 100%);
     border-radius: 15px;
     text-align: center;
 }
 
 .achievement-highlight h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -1937,7 +1919,7 @@ nav .active {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -1946,7 +1928,7 @@ nav .active {
 }
 
 .award-number-badge {
-    background: #0F5456;
+    background: var(--teal-primary);
     color: white;
     width: 40px;
     height: 40px;
@@ -1959,14 +1941,14 @@ nav .active {
 }
 
 .award-card-detailed h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .award-song-title {
     font-size: 1.1rem;
-    color: #1A7073;
+    color: var(--teal-medium);
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -2006,8 +1988,8 @@ nav .active {
 }
 
 .composer-tag {
-    background: #F4E4D7;
-    color: #0F5456;
+    background: var(--teal-bg);
+    color: var(--teal-primary);
 }
 
 .director-tag {
@@ -2034,7 +2016,7 @@ nav .active {
 }
 
 .achievement-summary h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -2049,12 +2031,12 @@ nav .active {
 .analysis-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
 }
 
 .analysis-label {
     font-size: 1.2rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
     margin: 0.5rem 0;
 }
@@ -2080,11 +2062,11 @@ nav .active {
 }
 
 .language-heading {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
     padding-left: 1rem;
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .filmfare-awards-list {
@@ -2104,7 +2086,7 @@ nav .active {
 }
 
 .year-badge {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
@@ -2115,13 +2097,13 @@ nav .active {
 }
 
 .filmfare-details h4 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
 .song-name {
-    color: #1A7073;
+    color: var(--teal-medium);
     font-weight: 600;
     margin-bottom: 0.3rem;
 }
@@ -2142,13 +2124,13 @@ nav .active {
     max-width: 1000px;
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFE5B4 0%, #D4AF37 100%);
+    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-primary) 100%);
     border-radius: 15px;
     text-align: center;
 }
 
 .filmfare-achievement h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 1rem;
 }
 
@@ -2171,7 +2153,7 @@ nav .active {
 }
 
 .state-section h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -2191,11 +2173,11 @@ nav .active {
 }
 
 .decade-group h4 {
-    color: #1A7073;
+    color: var(--teal-medium);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #E0F2F1;
+    border-bottom: 2px solid var(--teal-bg);
 }
 
 .years-grid {
@@ -2205,7 +2187,7 @@ nav .active {
 }
 
 .year-item {
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     padding: 1rem;
     border-radius: 10px;
     display: flex;
@@ -2216,7 +2198,7 @@ nav .active {
 .year-item .year {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
 }
 
 .year-item .film {
@@ -2234,7 +2216,7 @@ nav .active {
     background: #f9f9f9;
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid #1A7073;
+    border-left: 4px solid var(--teal-medium);
 }
 
 /* Doctorates */
@@ -2267,13 +2249,13 @@ nav .active {
 }
 
 .doctorate-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
 .degree {
-    color: #1A7073;
+    color: var(--teal-medium);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -2293,7 +2275,7 @@ nav .active {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: #E0F2F1;
+    background: var(--teal-bg);
     border-radius: 10px;
     text-align: center;
 }
@@ -2313,11 +2295,11 @@ nav .active {
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid var(--gold-primary);
 }
 
 .lifetime-award h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -2384,7 +2366,7 @@ nav .active {
 }
 
 .record-item h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
@@ -2423,7 +2405,7 @@ nav .active {
 
 .quote-attribution {
     font-size: 1.2rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -2434,7 +2416,7 @@ nav .active {
 
 .legacy-stats h3 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -2450,14 +2432,14 @@ nav .active {
     display: block;
     font-size: 4rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     margin-bottom: 0.5rem;
 }
 
 .number-label {
     display: block;
     font-size: 1.1rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -2515,7 +2497,7 @@ nav .active {
 }
 
 .award-stat-card.national {
-    border-color: #D4AF37;
+    border-color: var(--gold-primary);
 }
 
 .award-stat-card.padma {
@@ -2551,7 +2533,7 @@ nav .active {
 .award-stat-card .award-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -2572,13 +2554,13 @@ nav .active {
     max-width: 1100px;
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 15px;
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .intro-content h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -2599,7 +2581,7 @@ nav .active {
 
 .section-title {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
@@ -2624,7 +2606,7 @@ nav .active {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(180deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(180deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
 }
 
 .award-item {
@@ -2638,7 +2620,7 @@ nav .active {
     min-width: 80px;
     font-size: 2rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     text-align: right;
 }
 
@@ -2648,7 +2630,7 @@ nav .active {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .award-badge {
@@ -2661,8 +2643,8 @@ nav .active {
 }
 
 .vibhushan-badge {
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    color: var(--teal-primary);
 }
 
 .bhushan-badge {
@@ -2676,7 +2658,7 @@ nav .active {
 }
 
 .award-content h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -2689,7 +2671,7 @@ nav .active {
 }
 
 .award-details-box {
-    background: #E0F2F1;
+    background: var(--teal-bg);
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
@@ -2701,7 +2683,7 @@ nav .active {
 }
 
 .padma-significance {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -2724,7 +2706,7 @@ nav .active {
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid var(--gold-primary);
 }
 
 .national-awards-intro p {
@@ -2756,15 +2738,15 @@ nav .active {
 }
 
 .national-card {
-    border-top: 4px solid #D4AF37;
+    border-top: 4px solid var(--gold-primary);
 }
 
 .award-year-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    color: var(--teal-primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -2772,7 +2754,7 @@ nav .active {
 }
 
 .award-ribbon {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -2783,7 +2765,7 @@ nav .active {
 }
 
 .award-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
     margin-top: 0.5rem;
@@ -2797,8 +2779,8 @@ nav .active {
 
 .award-language {
     display: inline-block;
-    background: #B2DFDB;
-    color: #0F5456;
+    background: var(--teal-subtle);
+    color: var(--teal-primary);
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.9rem;
@@ -2814,7 +2796,7 @@ nav .active {
 }
 
 .award-note {
-    background: #E0F2F1;
+    background: var(--teal-bg);
     padding: 0.8rem;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -2825,7 +2807,7 @@ nav .active {
 
 /* National Awards Legacy */
 .national-awards-legacy {
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin-top: 3rem;
@@ -2833,7 +2815,7 @@ nav .active {
 
 .national-awards-legacy h3 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -2854,7 +2836,7 @@ nav .active {
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     margin-bottom: 0.5rem;
 }
 
@@ -2906,8 +2888,8 @@ nav .active {
 }
 
 .language-header.malayalam-header {
-    color: #0F5456;
-    border-color: #0F5456;
+    color: var(--teal-primary);
+    border-color: var(--teal-primary);
 }
 
 .language-header.tamil-header {
@@ -2916,8 +2898,8 @@ nav .active {
 }
 
 .language-header.telugu-header {
-    color: #D4AF37;
-    border-color: #D4AF37;
+    color: var(--gold-primary);
+    border-color: var(--gold-primary);
 }
 
 .language-header.kannada-header {
@@ -2937,7 +2919,7 @@ nav .active {
     align-items: center;
     gap: 1.5rem;
     padding: 1.2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 10px;
     transition: transform 0.3s;
 }
@@ -2950,7 +2932,7 @@ nav .active {
 .award-year-circle {
     min-width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -2965,7 +2947,7 @@ nav .active {
 }
 
 .award-details h4 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -3001,11 +2983,11 @@ nav .active {
 }
 
 .state-award-year-group h4 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #1A7073;
+    border-bottom: 2px solid var(--teal-medium);
 }
 
 .year-awards-list {
@@ -3025,7 +3007,7 @@ nav .active {
 }
 
 .year-badge {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 15px;
@@ -3036,7 +3018,7 @@ nav .active {
 
 .award-film {
     flex: 1;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
     min-width: 150px;
 }
@@ -3049,7 +3031,7 @@ nav .active {
 }
 
 .kerala-awards-stats {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -3104,14 +3086,14 @@ nav .active {
 }
 
 .ap-year {
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+    color: var(--teal-primary);
 }
 
 .tn-film,
 .ka-film,
 .ap-film {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -3156,7 +3138,7 @@ nav .active {
 }
 
 .doctorate-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
@@ -3202,7 +3184,7 @@ nav .active {
 }
 
 .intl-award-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
@@ -3247,7 +3229,7 @@ nav .active {
 }
 
 .decade-header {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 1.5rem;
     font-size: 1.8rem;
@@ -3260,7 +3242,7 @@ nav .active {
 }
 
 .decade-summary {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -3308,7 +3290,7 @@ nav .active {
 }
 
 .recognition-item h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
@@ -3328,12 +3310,12 @@ nav .active {
 }
 
 .record-card {
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 15px;
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s;
-    border-top: 4px solid #1A7073;
+    border-top: 4px solid var(--teal-medium);
 }
 
 .record-card:hover {
@@ -3344,7 +3326,7 @@ nav .active {
 .record-number {
     font-size: 4rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -3368,7 +3350,7 @@ nav .active {
 }
 
 .legacy-quote {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 3rem;
     border-radius: 15px;
@@ -3401,11 +3383,11 @@ nav .active {
     border-radius: 15px;
     margin-top: 2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .legacy-final-note h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -3476,7 +3458,7 @@ nav .active {
 .timeline-stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     margin-bottom: 0.5rem;
 }
 
@@ -3498,7 +3480,7 @@ nav .active {
 
 .decade-header h2 {
     font-size: 2.5rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -3510,7 +3492,7 @@ nav .active {
 .timeline-container {
     position: relative;
     padding-left: 3rem;
-    border-left: 4px solid #1A7073;
+    border-left: 4px solid var(--teal-medium);
 }
 
 .timeline-event {
@@ -3529,18 +3511,18 @@ nav .active {
     top: 2rem;
     width: 20px;
     height: 20px;
-    background: #1A7073;
+    background: var(--teal-medium);
     border-radius: 50%;
     border: 4px solid white;
-    box-shadow: 0 0 0 2px #1A7073;
+    box-shadow: 0 0 0 2px var(--teal-medium);
 }
 
 .timeline-event.major-event {
-    border: 3px solid #D4AF37;
+    border: 3px solid var(--gold-primary);
 }
 
 .timeline-event.major-event::before {
-    background: #D4AF37;
+    background: var(--gold-primary);
     width: 30px;
     height: 30px;
     left: -3.8rem;
@@ -3548,7 +3530,7 @@ nav .active {
 
 .event-date {
     display: inline-block;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -3557,7 +3539,7 @@ nav .active {
 }
 
 .event-content h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -3570,18 +3552,18 @@ nav .active {
 }
 
 .event-highlight, .event-detail {
-    background: #E0F2F1;
+    background: var(--teal-bg);
     padding: 1.5rem;
     border-radius: 10px;
     margin-top: 1rem;
 }
 
 .event-highlight {
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid var(--gold-primary);
 }
 
 .event-detail {
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .decade-summary {
@@ -3592,7 +3574,7 @@ nav .active {
 }
 
 .decade-summary h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -3612,7 +3594,7 @@ nav .active {
 }
 
 .summary-item strong {
-    color: #1A7073;
+    color: var(--teal-medium);
     font-size: 1.1rem;
 }
 
@@ -3620,14 +3602,14 @@ nav .active {
     max-width: 1400px;
     margin: 4rem auto;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
     border-radius: 20px;
 }
 
 .career-statistics h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 3rem;
 }
 
@@ -3648,7 +3630,7 @@ nav .active {
 .mega-number {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
     margin-bottom: 0.5rem;
 }
 
@@ -3684,7 +3666,7 @@ nav .active {
 
 .collab-section h2 {
     font-size: 2.5rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -3717,7 +3699,7 @@ nav .active {
 }
 
 .composer-card.featured {
-    border: 3px solid #D4AF37;
+    border: 3px solid var(--gold-primary);
     background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
 }
 
@@ -3727,16 +3709,16 @@ nav .active {
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #E0F2F1;
+    border-bottom: 2px solid var(--teal-bg);
 }
 
 .composer-header h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
 }
 
 .song-count {
-    background: linear-gradient(135deg, #1A7073 0%, #0F5456 100%);
+    background: linear-gradient(135deg, var(--teal-medium) 0%, var(--teal-primary) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -3756,7 +3738,7 @@ nav .active {
 }
 
 .highlights h4 {
-    color: #1A7073;
+    color: var(--teal-medium);
     margin-bottom: 0.5rem;
 }
 
@@ -3775,7 +3757,7 @@ nav .active {
     content: "♪";
     position: absolute;
     left: 0;
-    color: #1A7073;
+    color: var(--teal-medium);
     font-weight: bold;
 }
 
@@ -3803,13 +3785,13 @@ nav .active {
 }
 
 .cosinger-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .duet-count {
-    color: #1A7073;
+    color: var(--teal-medium);
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 1rem;
@@ -3830,7 +3812,7 @@ nav .active {
 }
 
 .director-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
@@ -3844,7 +3826,7 @@ nav .active {
 
 .about-content h2 {
     font-size: 2.5rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -3877,11 +3859,11 @@ nav .active {
 }
 
 .info-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #E0F2F1;
+    border-bottom: 2px solid var(--teal-bg);
 }
 
 .info-card p {
@@ -3916,7 +3898,7 @@ nav .active {
 }
 
 .philosophy-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 1rem;
 }
 
@@ -3942,7 +3924,7 @@ nav .active {
 }
 
 .achievement-text strong {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     display: block;
     margin-bottom: 0.5rem;
@@ -3987,7 +3969,7 @@ nav .active {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid #1A7073;
+    border-left: 5px solid var(--teal-medium);
 }
 
 .quote-card p {
@@ -3997,7 +3979,7 @@ nav .active {
 }
 
 .quote-author {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -4009,7 +3991,7 @@ nav .active {
 }
 
 .academy-info h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -4056,7 +4038,7 @@ nav .active {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background: #E0F2F1;
+    background: var(--teal-bg);
     border-radius: 10px;
     margin: 1rem 0;
 }
@@ -4065,9 +4047,9 @@ nav .active {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     background: white;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -4077,13 +4059,13 @@ nav .active {
 }
 
 .control-btn:hover {
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
     transform: scale(1.1);
 }
 
 .control-btn.active {
-    background: #0F5456;
+    background: var(--teal-primary);
     color: white;
 }
 
@@ -4111,7 +4093,7 @@ nav .active {
 #volumeSlider::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
-    background: #1A7073;
+    background: var(--teal-medium);
     border-radius: 50%;
     cursor: pointer;
 }
@@ -4120,7 +4102,7 @@ nav .active {
     min-width: 45px;
     text-align: center;
     font-weight: 600;
-    color: #0F5456;
+    color: var(--teal-primary);
 }
 
 /* Queue Panel */
@@ -4144,7 +4126,7 @@ nav .active {
 
 .queue-header {
     padding: 1.5rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -4157,7 +4139,7 @@ nav .active {
 
 .queue-count {
     background: white;
-    color: #0F5456;
+    color: var(--teal-primary);
     padding: 0.3rem 0.6rem;
     border-radius: 15px;
     font-weight: 600;
@@ -4181,13 +4163,13 @@ nav .active {
 
 .queue-item.current {
     background: linear-gradient(135deg, #FFF9E6 0%, #FFE5B4 100%);
-    border-left: 4px solid #1A7073;
+    border-left: 4px solid var(--teal-medium);
 }
 
 .queue-number {
     width: 30px;
     height: 30px;
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -4202,7 +4184,7 @@ nav .active {
 
 .queue-title {
     font-weight: 600;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.3rem;
 }
 
@@ -4244,7 +4226,7 @@ nav .active {
 
 .queue-footer {
     padding: 1rem;
-    border-top: 2px solid #E0F2F1;
+    border-top: 2px solid var(--teal-bg);
     display: flex;
     gap: 1rem;
 }
@@ -4383,7 +4365,7 @@ nav .active {
         }
         
         .mobile-nav-item.active {
-            color: #0F5456;
+            color: var(--teal-primary);
         }
         
         .mobile-nav-icon {
@@ -4426,12 +4408,12 @@ nav .active {
 
 .language-btn {
     background: white;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    color: #0F5456;
+    color: var(--teal-primary);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -4443,7 +4425,7 @@ nav .active {
     right: 0;
     margin-top: 0.5rem;
     background: white;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     display: none;
@@ -4458,7 +4440,7 @@ nav .active {
     padding: 0.8rem 1rem;
     cursor: pointer;
     transition: background 0.3s;
-    border-bottom: 1px solid #E0F2F1;
+    border-bottom: 1px solid var(--teal-bg);
 }
 
 .language-option:last-child {
@@ -4466,11 +4448,11 @@ nav .active {
 }
 
 .language-option:hover {
-    background: #E0F2F1;
+    background: var(--teal-bg);
 }
 
 .language-option.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     font-weight: 600;
 }
@@ -4486,7 +4468,7 @@ nav .active {
 
 [dir="rtl"] .timeline-container {
     border-left: none;
-    border-right: 4px solid #1A7073;
+    border-right: 4px solid var(--teal-medium);
     padding-left: 0;
     padding-right: 3rem;
 }
@@ -4522,7 +4504,7 @@ nav .active {
 }
 
 button:focus, a:focus, input:focus, select:focus {
-    outline: 3px solid #1A7073;
+    outline: 3px solid var(--teal-medium);
     outline-offset: 2px;
 }
 
@@ -4553,7 +4535,7 @@ button:focus, a:focus, input:focus, select:focus {
         --bg-secondary: #2d2d2d;
         --text-primary: #ffffff;
         --text-secondary: #cccccc;
-        --accent: #1A7073;
+        --accent: var(--teal-medium);
     }
     
     body {
@@ -4603,8 +4585,8 @@ button:focus, a:focus, input:focus, select:focus {
 .category-btn {
     padding: 0.7rem 1.5rem;
     background: white;
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
@@ -4612,7 +4594,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .category-btn:hover, .category-btn.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -4695,7 +4677,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .video-info h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
@@ -4784,9 +4766,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .timeline-btn {
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -4794,7 +4776,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .timeline-btn:hover, .timeline-btn.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     transform: translateY(-2px);
 }
@@ -4812,8 +4794,8 @@ button:focus, a:focus, input:focus, select:focus {
 .photo-category-btn {
     padding: 0.6rem 1rem;
     background: white;
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -4821,7 +4803,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .photo-category-btn:hover, .photo-category-btn.active {
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
 }
 
@@ -4962,7 +4944,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-selection h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 2rem;
     margin-bottom: 3rem;
 }
@@ -4993,14 +4975,14 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .quiz-mode-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
 .start-quiz-btn {
     margin-top: 1rem;
     padding: 0.7rem 2rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5037,20 +5019,20 @@ button:focus, a:focus, input:focus, select:focus {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     transition: width 0.5s;
 }
 
 .progress-text {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
 .quiz-score {
     text-align: center;
     font-size: 1.5rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: bold;
     margin-bottom: 2rem;
 }
@@ -5063,7 +5045,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .question-card h2 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 2rem;
     font-size: 1.5rem;
     line-height: 1.6;
@@ -5078,9 +5060,9 @@ button:focus, a:focus, input:focus, select:focus {
 
 .option-btn {
     padding: 1.2rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 10px;
     cursor: pointer;
     font-size: 1.05rem;
@@ -5090,7 +5072,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .option-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #B2DFDB 0%, #d4c4b4 100%);
+    background: linear-gradient(135deg, var(--teal-subtle) 0%, #d4c4b4 100%);
     transform: translateX(5px);
 }
 
@@ -5109,7 +5091,7 @@ button:focus, a:focus, input:focus, select:focus {
 .next-question-btn {
     width: 100%;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5128,7 +5110,7 @@ button:focus, a:focus, input:focus, select:focus {
     padding: 1.5rem;
     border-radius: 10px;
     margin-top: 2rem;
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid var(--gold-primary);
 }
 
 .quiz-results {
@@ -5157,7 +5139,7 @@ button:focus, a:focus, input:focus, select:focus {
 .score-big {
     font-size: 4rem;
     font-weight: bold;
-    color: #0F5456;
+    color: var(--teal-primary);
 }
 
 .score-label {
@@ -5168,7 +5150,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .results-message {
     font-size: 1.3rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin: 2rem 0;
     font-weight: 600;
 }
@@ -5186,7 +5168,7 @@ button:focus, a:focus, input:focus, select:focus {
 .stat-value {
     font-size: 2rem;
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
 }
 
 .stat-label {
@@ -5209,7 +5191,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .leaderboard-section h2 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 2rem;
 }
 
@@ -5237,12 +5219,12 @@ button:focus, a:focus, input:focus, select:focus {
 .player-name {
     flex: 1;
     font-weight: 600;
-    color: #0F5456;
+    color: var(--teal-primary);
 }
 
 .player-score {
     font-weight: bold;
-    color: #1A7073;
+    color: var(--teal-medium);
 }
 
 /* Responsive Phase 8 */
@@ -5281,20 +5263,20 @@ button:focus, a:focus, input:focus, select:focus {
 .lyrics-search-input {
     flex: 1;
     padding: 1rem 1.5rem;
-    border: 2px solid #1A7073;
+    border: 2px solid var(--teal-medium);
     border-radius: 25px;
     font-size: 1.1rem;
     outline: none;
 }
 
 .lyrics-search-input:focus {
-    border-color: #0F5456;
+    border-color: var(--teal-primary);
     box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
 }
 
 .lyrics-search-button {
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     border: none;
     border-radius: 25px;
@@ -5328,8 +5310,8 @@ button:focus, a:focus, input:focus, select:focus {
 .lyrics-lang-btn {
     padding: 0.6rem 1.2rem;
     background: white;
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -5337,7 +5319,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-lang-btn:hover, .lyrics-lang-btn.active {
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
 }
 
@@ -5347,7 +5329,7 @@ button:focus, a:focus, input:focus, select:focus {
     padding: 0 2rem;
     text-align: center;
     font-size: 1.2rem;
-    color: #0F5456;
+    color: var(--teal-primary);
     font-weight: 600;
 }
 
@@ -5359,7 +5341,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .popular-songs-section h2, .lyrics-results-container h2 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 2rem;
 }
 
@@ -5390,13 +5372,13 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-card-header h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     font-size: 1.3rem;
     flex: 1;
 }
 
 .lyrics-language-badge {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
@@ -5415,7 +5397,7 @@ button:focus, a:focus, input:focus, select:focus {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 2px solid #E0F2F1;
+    border-top: 2px solid var(--teal-bg);
 }
 
 .lyrics-movie {
@@ -5425,7 +5407,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .view-full-lyrics-btn {
     padding: 0.5rem 1rem;
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
     border: none;
     border-radius: 20px;
@@ -5435,7 +5417,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .view-full-lyrics-btn:hover {
-    background: #0F5456;
+    background: var(--teal-primary);
     transform: scale(1.05);
 }
 
@@ -5472,13 +5454,13 @@ button:focus, a:focus, input:focus, select:focus {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #0F5456;
+    color: var(--teal-primary);
     z-index: 10001;
 }
 
 .lyrics-modal-header {
     padding: 2rem;
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
     border-radius: 15px 15px 0 0;
 }
@@ -5501,7 +5483,7 @@ button:focus, a:focus, input:focus, select:focus {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    border-bottom: 2px solid #E0F2F1;
+    border-bottom: 2px solid var(--teal-bg);
 }
 
 .lyrics-tab {
@@ -5516,8 +5498,8 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-tab:hover, .lyrics-tab.active {
-    color: #0F5456;
-    border-bottom-color: #1A7073;
+    color: var(--teal-primary);
+    border-bottom-color: var(--teal-medium);
 }
 
 .lyrics-tab-content {
@@ -5541,15 +5523,15 @@ button:focus, a:focus, input:focus, select:focus {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    border-top: 2px solid #E0F2F1;
+    border-top: 2px solid var(--teal-bg);
 }
 
 .lyrics-action-btn {
     flex: 1;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 100%);
-    border: 2px solid #1A7073;
-    color: #0F5456;
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%);
+    border: 2px solid var(--teal-medium);
+    color: var(--teal-primary);
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
@@ -5557,7 +5539,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-action-btn:hover {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
+    background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%);
     color: white;
 }
 
@@ -5569,7 +5551,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .featured-lyrics-section h2 {
     text-align: center;
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 3rem;
 }
 
@@ -5599,7 +5581,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .lyrics-category-card h3 {
-    color: #0F5456;
+    color: var(--teal-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -5610,7 +5592,7 @@ button:focus, a:focus, input:focus, select:focus {
 
 .browse-category-btn {
     padding: 0.6rem 1.5rem;
-    background: #1A7073;
+    background: var(--teal-medium);
     color: white;
     border: none;
     border-radius: 20px;
@@ -5620,7 +5602,7 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 .browse-category-btn:hover {
-    background: #0F5456;
+    background: var(--teal-primary);
     transform: scale(1.05);
 }
 
@@ -5648,9 +5630,9 @@ body { min-width: 1200px; }
 :root { color-scheme: light only !important; }
 @media (prefers-color-scheme: dark) {
     body { background: #f9f9f9 !important; color: #333 !important; }
-    header, nav, .hero, .page-header, footer { background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%) !important; color: white !important; }
+    header, nav, .hero, .page-header, footer { background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%) !important; color: white !important; }
     .song-card, .stat-card, .language-card { background: white !important; color: #333 !important; }
-    h1, h2, h3 { color: #0F5456 !important; }
+    h1, h2, h3 { color: var(--teal-primary) !important; }
     input, select { background: white !important; color: #333 !important; }
 }
 .mobile-menu-toggle { display: none; position: fixed; top: 1rem; right: 1rem; }
@@ -5673,7 +5655,7 @@ footer, footer * {
 
 @media (prefers-color-scheme: dark) {
     .page-header, .hero, header, footer {
-        background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%) !important;
+        background: linear-gradient(135deg, var(--teal-primary) 0%, var(--teal-medium) 100%) !important;
         color: white !important;
     }
     .page-header *, .hero *, header *, footer * {
@@ -5682,29 +5664,54 @@ footer, footer * {
 }
 
 
-/* ================================================================
-   MODERN PREMIUM ENHANCEMENTS
-   ================================================================ */
+/* =================================================================
+   PREMIUM ENHANCEMENTS - GLASSMORPHIC & MODERN EFFECTS
+   ================================================================= */
 
-/* Smooth scroll behavior */
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Enhanced nav link hover effect */
-.nav-links a {
-    position: relative;
-    transition: all 0.3s ease;
+/* Glassmorphic Header */
+header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 20px rgba(15, 84, 86, 0.1);
 }
 
+header.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 4px 30px rgba(15, 84, 86, 0.15);
+}
+
+/* Logo gradient text */
+.logo {
+    background: var(--gradient-primary) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: bold;
+}
+
+/* Nav links with teal color */
+.nav-links a {
+    color: var(--teal-primary) !important;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Gold underline animation */
 .nav-links a::after {
     content: '';
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+    background: var(--gradient-gold);
     transition: width 0.3s ease;
 }
 
@@ -5714,86 +5721,107 @@ html {
 }
 
 .nav-links a:hover {
-    color: #1A7073;
+    color: var(--teal-medium) !important;
+    opacity: 1 !important;
 }
 
-/* Logo hover animation */
-.logo {
-    transition: transform 0.3s ease;
+/* Enhanced Hero Section */
+.hero {
+    background: var(--gradient-hero) !important;
+    min-height: 650px !important;
 }
 
-.logo:hover {
-    transform: scale(1.05);
+/* Gold gradient hero title */
+.hero h1 {
+    background: var(--gradient-gold) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 700 !important;
 }
 
-/* Enhanced button styles */
-.filter-btn:hover,
-.filter-btn.active {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(15, 84, 86, 0.3);
+/* Glassmorphic stat cards */
+.stat {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Premium award badges */
+/* Gold gradient stat numbers */
+.stat-number {
+    background: var(--gradient-gold) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Gold gradient award badges */
 .award-badge {
-    background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-    transition: all 0.3s ease;
+    background: var(--gradient-gold) !important;
+    color: var(--teal-dark) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
 }
 
 .award-badge:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
 }
 
-/* Glassmorphic cards */
-.language-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(15, 84, 86, 0.1);
+/* Enhanced shadows on cards */
+.song-card,
+.language-card,
+.stat-card {
+    box-shadow: var(--shadow-md) !important;
 }
 
-.language-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 35px rgba(15, 84, 86, 0.2);
-    background: rgba(255, 255, 255, 1);
+.song-card:hover,
+.language-card:hover,
+.stat-card:hover {
+    box-shadow: var(--shadow-xl) !important;
+    transform: translateY(-8px) scale(1.02) !important;
 }
 
-/* Enhanced song card hover */
-.song-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(15, 84, 86, 0.25);
-}
-
-/* Modern input focus */
-input:focus,
-select:focus {
-    outline: none;
-    border-color: #1A7073;
-    box-shadow: 0 0 0 3px rgba(26, 112, 115, 0.1);
-}
-
-/* Premium mini player */
+/* Mini player gradient */
 .mini-player {
-    background: linear-gradient(135deg, #0F5456 0%, #1A7073 100%);
-    box-shadow: 0 -8px 30px rgba(15, 84, 86, 0.3);
+    background: var(--gradient-header) !important;
 }
 
-/* Enhanced footer */
+/* Footer gradient */
 footer {
-    background: linear-gradient(135deg, #0A3D3E 0%, #0F5456 50%, #1A7073 100%);
+    background: var(--gradient-header) !important;
 }
 
-/* Gold text accents */
+/* Page header gradient */
+.page-header {
+    background: var(--gradient-primary) !important;
+}
+
+/* Button hover effects */
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+}
+
+/* Language section background */
+.languages-section {
+    background: linear-gradient(135deg, var(--teal-bg) 0%, var(--teal-subtle) 100%) !important;
+}
+
+/* Enhanced input focus */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--teal-medium) !important;
+    box-shadow: 0 0 0 3px rgba(26, 112, 115, 0.1) !important;
+}
+
+/* Teal text colors for headings */
 h2, h3 {
-    color: #0F5456;
+    color: var(--teal-primary) !important;
 }
 
-.page-header h1 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Animated hero stats */
+/* Animated loading */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -5809,7 +5837,7 @@ h2, h3 {
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-/* Pulse animation for icons */
+/* Icon pulse animation */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -5823,29 +5851,6 @@ h2, h3 {
     animation: pulse 3s ease-in-out infinite;
 }
 
-/* Header scroll shadow */
-header.scrolled {
-    box-shadow: 0 4px 20px rgba(15, 84, 86, 0.15);
-}
-
-/* Modern loading animation */
-@keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-    100% {
-        background-position: 1000px 0;
-    }
-}
-
-.loading {
-    background: linear-gradient(90deg, #E0F2F1 25%, #B2DFDB 50%, #E0F2F1 75%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* ================================================================
-   END MODERN ENHANCEMENTS
-   ================================================================ */
+/* =================================================================
+   END PREMIUM ENHANCEMENTS
+   ================================================================= */
