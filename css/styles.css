@@ -127,7 +127,7 @@ nav {
 
 .stat {
     background: rgba(255,255,255,0.2);
-    padding: 1rem 2rem;
+    padding: 2rem 3rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
