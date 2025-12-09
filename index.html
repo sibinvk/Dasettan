@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.J. Yesudas - The Legendary Voice of India</title>
-    
-    <!-- New Premium Styles -->
-    <link rel="stylesheet" href="css/YESUDAS-NEW-STYLES.css">
+    <title>K.J. Yesudas - The Legendary Voice of Indian Cinema</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Premium Fonts (Optional - for premium theme) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Your Complete Stylesheet (5,677 lines) -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Chart.js for Statistics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <div class="loader-icon">🎵</div>
-            <div class="loader-text">Loading...</div>
-        </div>
-    </div>
-
-    <!-- Header - Premium Glassmorphic Design -->
-    <header id="mainHeader">
+    <!-- Header/Navigation -->
+    <header>
         <nav>
-            <a href="index.html" class="logo">K.J. Yesudas</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎵</span>
+                K.J. Yesudas
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="malayalam.html">Malayalam</a></li>
@@ -31,7 +37,6 @@
                 <li><a href="telugu.html">Telugu</a></li>
                 <li><a href="kannada.html">Kannada</a></li>
                 <li><a href="hindi.html">Hindi</a></li>
-                <li><a href="other.html">Other</a></li>
                 <li><a href="statistics.html">Statistics</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
                 <li><a href="awards.html">Awards</a></li>
@@ -39,158 +44,302 @@
                 <li><a href="collaborations.html">Collaborations</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
-    <!-- Hero Section - Dramatic & Elegant -->
+    <!-- Hero Section -->
     <section class="hero">
-        <!-- Animated Background Elements -->
-        <div class="hero-bg-element"></div>
-        <div class="hero-bg-element"></div>
-        <div class="hero-bg-element"></div>
+        <!-- Animated Background Orbs (for premium theme) -->
+        <div class="hero-orb"></div>
         
         <div class="hero-content">
             <h1>K.J. Yesudas</h1>
-            <p class="hero-subtitle">The Golden Voice of Indian Cinema</p>
+            <p class="hero-subtitle">The Legendary Voice of Indian Cinema</p>
             
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number">50,000+</span>
-                    <span class="stat-label">Songs Recorded</span>
+                    <span class="stat-number" id="totalSongs">40,000+</span>
+                    <span class="stat-label">Songs</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">National Awards</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">15+</span>
+                    <span class="stat-number">15</span>
                     <span class="stat-label">Languages</span>
                 </div>
+                <div class="stat">
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label">Years</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Biography Section - Refined Layout -->
+    <!-- Biography Section -->
     <section class="biography">
         <div class="biography-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/K_J_Yesudas.JPG" 
-                 alt="K.J. Yesudas"
-                 loading="lazy">
+            <img src="images/yesudas-portrait.jpg" alt="K.J. Yesudas" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:1.2rem;color:white;\'>K.J. Yesudas Portrait</div>'">
         </div>
+        
         <div class="biography-content">
-            <h2>The Legend</h2>
+            <h2>A Voice That Transcends Generations</h2>
             <p>
-                Kattassery Joseph Yesudas, popularly known as Dr. K.J. Yesudas, is an Indian playback singer and musician who has recorded over 50,000 songs in multiple Indian languages including Malayalam, Tamil, Telugu, Kannada, Hindi, Bengali, Odia, Marathi, Gujarati, Tulu, Konkani, Assamese, Urdu, Bhojpuri, Kumaoni, Braj, Sanskrit, Arabic, English and others.
+                Kattassery Joseph Yesudas, popularly known as Dr. K. J. Yesudas, is an Indian playback singer and musician who sings predominantly in Malayalam, Tamil, Telugu, Kannada, and Hindi films. Often referred to as Gaanagandharvan (The Celestial Singer), he is regarded as one of the greatest singers in the history of Indian music.
             </p>
             <p>
-                Born on January 10, 1940, in Fort Kochi, Kerala, Yesudas is often referred to as "Gaana Gandharvan" (The Celestial Singer). His career spanning over six decades has made him one of the most celebrated voices in Indian music history.
+                With a career spanning over six decades, Yesudas has recorded over 40,000 songs in various Indian languages, including devotional, classical, and film music. He has won numerous accolades, including eight National Film Awards, five Filmfare Awards South, and the Padma Shri, Padma Bhushan, and Padma Vibhushan from the Government of India.
             </p>
             <p>
-                He is a recipient of the Padma Shri (1975), Padma Bhushan (2002), and Padma Vibhushan (2017), along with eight National Film Awards, numerous State Film Awards, and international recognition for his contribution to music.
+                His mellifluous voice and emotive singing have made him a legend across South India and beyond, with fans spanning multiple generations and continents.
             </p>
+            
             <div class="awards">
-                <span class="award-badge">🏆 Padma Vibhushan</span>
-                <span class="award-badge">🏆 8 National Awards</span>
-                <span class="award-badge">🏆 6 Filmfare Awards</span>
-                <span class="award-badge">🏆 35+ State Awards</span>
+                <span class="award-badge">Padma Vibhushan</span>
+                <span class="award-badge">8× National Award</span>
+                <span class="award-badge">5× Filmfare Award</span>
+                <span class="award-badge">43× Kerala State Award</span>
             </div>
         </div>
     </section>
 
-    <!-- Languages Section - Premium Card Grid -->
+    <!-- Languages Section -->
     <section class="languages-section">
         <h2>Explore Songs by Language</h2>
+        
         <div class="languages-grid">
             <a href="malayalam.html" class="language-card">
-                <div class="language-icon">🌴</div>
-                <h3>Malayalam</h3>
-                <p>Over 10,000 songs in his mother tongue</p>
-            </a>
-            <a href="tamil.html" class="language-card">
-                <div class="language-icon">🛕</div>
-                <h3>Tamil</h3>
-                <p>Thousands of timeless Tamil classics</p>
-            </a>
-            <a href="telugu.html" class="language-card">
                 <div class="language-icon">🎭</div>
-                <h3>Telugu</h3>
-                <p>Mesmerizing Telugu melodies</p>
+                <h3>Malayalam</h3>
+                <p>The language of his heart - over 16,000 songs</p>
             </a>
-            <a href="kannada.html" class="language-card">
-                <div class="language-icon">🌄</div>
-                <h3>Kannada</h3>
-                <p>Beautiful Kannada compositions</p>
-            </a>
-            <a href="hindi.html" class="language-card">
+            
+            <a href="tamil.html" class="language-card">
                 <div class="language-icon">🎬</div>
-                <h3>Hindi</h3>
-                <p>Iconic Bollywood songs</p>
+                <h3>Tamil</h3>
+                <p>Timeless melodies that captured Tamil cinema</p>
             </a>
-            <a href="other.html" class="language-card">
-                <div class="language-icon">🌍</div>
-                <h3>Other Languages</h3>
-                <p>Bengali, Odia, Marathi & More</p>
+            
+            <a href="telugu.html" class="language-card">
+                <div class="language-icon">🎪</div>
+                <h3>Telugu</h3>
+                <p>Soul-stirring songs from Telugu films</p>
+            </a>
+            
+            <a href="kannada.html" class="language-card">
+                <div class="language-icon">🎨</div>
+                <h3>Kannada</h3>
+                <p>Melodious contributions to Kannada cinema</p>
+            </a>
+            
+            <a href="hindi.html" class="language-card">
+                <div class="language-icon">🎵</div>
+                <h3>Hindi</h3>
+                <p>Memorable songs from Bollywood films</p>
+            </a>
+            
+            <a href="bengali.html" class="language-card">
+                <div class="language-icon">📖</div>
+                <h3>Bengali & Others</h3>
+                <p>Odia, Marathi, Gujarati, Sanskrit & more</p>
             </a>
         </div>
     </section>
 
-    <!-- Footer - Elegant & Simple -->
+    <!-- Footer -->
     <footer>
-        <p><strong>A Tribute to the Legendary K.J. Yesudas</strong></p>
-        <p>Celebrating over 60 years of musical excellence</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">© 2024 - This is a fan tribute website</p>
+        <p>&copy; 2024 K.J. Yesudas Tribute Website. All Rights Reserved.</p>
+        <p>A tribute to the legendary voice that has touched millions of hearts.</p>
+        <p>Made with ❤️ by fans, for fans</p>
     </footer>
 
-    <!-- Mini Player (Hidden by default) -->
-    <div id="miniPlayer" class="mini-player hidden">
+    <!-- Mini Player (Initially Hidden) -->
+    <div class="mini-player hidden" id="miniPlayer">
         <div class="mini-player-content">
             <div class="mini-player-info">
-                <h4 id="playerSongTitle">Song Title</h4>
-                <p id="playerSongDetails">Movie • Singer</p>
+                <h4 id="currentSongTitle">Song Title</h4>
+                <p id="currentSongDetails">Movie - Year - Language</p>
             </div>
             <div class="mini-player-controls">
-                <button id="minimizePlayer" class="player-btn">▼</button>
-                <button id="closePlayer" class="player-btn">✕</button>
+                <button class="player-btn" onclick="togglePlayer()">
+                    <i class="fas fa-chevron-up"></i> <span id="toggleText">Expand</span>
+                </button>
+                <button class="player-btn" onclick="closePlayer()">
+                    <i class="fas fa-times"></i> Close
+                </button>
             </div>
         </div>
-        <div id="playerContainer" class="player-container"></div>
+        <div class="player-container" id="playerContainer">
+            <iframe id="youtubePlayer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Queue Panel (for Phase 5 features) -->
+    <div class="queue-panel" id="queuePanel">
+        <div class="queue-header">
+            <h3>Play Queue</h3>
+            <span class="queue-count" id="queueCount">0</span>
+            <button class="player-btn" onclick="closeQueue()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="queue-list" id="queueList">
+            <div class="empty-queue">
+                <p>No songs in queue</p>
+            </div>
+        </div>
+        <div class="queue-footer">
+            <button class="player-btn" onclick="clearQueue()">Clear Queue</button>
+            <button class="player-btn" onclick="shuffleQueue()">Shuffle</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading">Loading songs</div>
+    </div>
+
+    <!-- Language Switcher (Phase 7) -->
+    <div class="language-switcher">
+        <button class="language-btn" onclick="toggleLanguageDropdown()">
+            <i class="fas fa-globe"></i> <span id="currentLang">English</span>
+        </button>
+        <div class="language-dropdown" id="languageDropdown">
+            <div class="language-option active" onclick="switchLanguage('en')">English</div>
+            <div class="language-option" onclick="switchLanguage('ml')">മലയാളം</div>
+            <div class="language-option" onclick="switchLanguage('ta')">தமிழ்</div>
+            <div class="language-option" onclick="switchLanguage('te')">తెలుగు</div>
+            <div class="language-option" onclick="switchLanguage('kn')">ಕನ್ನಡ</div>
+            <div class="language-option" onclick="switchLanguage('hi')">हिन्दी</div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item active">
+            <span class="mobile-nav-icon">🏠</span>
+            Home
+        </a>
+        <a href="statistics.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">📊</span>
+            Stats
+        </a>
+        <a href="favorites.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">❤️</span>
+            Favorites
+        </a>
+        <a href="awards.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">🏆</span>
+            Awards
+        </a>
+        <a href="about.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">ℹ️</span>
+            About
+        </a>
+    </nav>
+
+    <!-- Main JavaScript -->
     <script src="js/main.js"></script>
     
-    <!-- Page Loader Script -->
+    <!-- Additional Scripts for Enhanced Features -->
     <script>
-        // Page Loader
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('pageLoader');
-            setTimeout(() => {
-                loader.classList.add('loaded');
-            }, 500);
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
-        
-        // Header Scroll Effect
-        const header = document.getElementById('mainHeader');
+
+        // Player functions
+        function togglePlayer() {
+            const player = document.getElementById('miniPlayer');
+            player.classList.toggle('minimized');
+            const toggleText = document.getElementById('toggleText');
+            toggleText.textContent = player.classList.contains('minimized') ? 'Expand' : 'Collapse';
+        }
+
+        function closePlayer() {
+            document.getElementById('miniPlayer').classList.add('hidden');
+        }
+
+        // Queue functions
+        function openQueue() {
+            document.getElementById('queuePanel').classList.add('open');
+        }
+
+        function closeQueue() {
+            document.getElementById('queuePanel').classList.remove('open');
+        }
+
+        function clearQueue() {
+            // Implement queue clearing
+            showToast('Queue cleared');
+        }
+
+        function shuffleQueue() {
+            // Implement queue shuffling
+            showToast('Queue shuffled');
+        }
+
+        // Toast notification
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Language switcher
+        function toggleLanguageDropdown() {
+            document.getElementById('languageDropdown').classList.toggle('open');
+        }
+
+        function switchLanguage(lang) {
+            const langNames = {
+                'en': 'English',
+                'ml': 'മലയാളം',
+                'ta': 'தமிழ்',
+                'te': 'తెలుగు',
+                'kn': 'ಕನ್ನಡ',
+                'hi': 'हिन्दी'
+            };
+            document.getElementById('currentLang').textContent = langNames[lang];
+            document.getElementById('languageDropdown').classList.remove('open');
+            showToast(`Language switched to ${langNames[lang]}`);
+        }
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const switcher = document.querySelector('.language-switcher');
+            if (switcher && !switcher.contains(event.target)) {
+                document.getElementById('languageDropdown')?.classList.remove('open');
+            }
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+            
+            lastScroll = currentScroll;
         });
-        
-        // Smooth Scroll for Navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+
+        // Update total songs count (if you have the actual data)
+        // This will be populated by your main.js when it loads the data
+        window.addEventListener('DOMContentLoaded', function() {
+            // The main.js will update this with actual count
         });
     </script>
 </body>
