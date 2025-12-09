@@ -20,52 +20,23 @@ header {
     top: 0;
     z-index: 1000;
 }
-header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
 
 nav {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 0 2rem;
 }
 
 .logo {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--primary-dark);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    position: relative;
-    transition: all var(--transition-smooth);
-}
-.logo::before {
-    content: '🎵';
-    font-size: 2rem;
-    animation: float 3s ease-in-out infinite;
 }
 
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--gradient-gold);
-    transition: width var(--transition-smooth);
-}
-
-.logo:hover::after {
-    width: 100%;
-}
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -673,10 +644,7 @@ nav {
         content: '...';
     }
 }
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
@@ -709,13 +677,10 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-   /* Navigation Links - Modern & Clean */
-.nav-links {
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-    align-items: center;
-}
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
 
     .page-header h1 {
         font-size: 2rem;
@@ -4522,71 +4487,19 @@ button:focus, a:focus, input:focus, select:focus {
 }
 
 /* Dark Mode Support (Phase 7) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
-
-:root {
-    /* NEW Premium Color Palette - Sophisticated Teal & Gold */
-    --primary-dark: #0A3D3E;
-    --primary: #0F5456;
-    --primary-light: #1A7073;
-    --accent-gold: #D4AF37;
-    --accent-gold-light: #F4D03F;
-    --accent-copper: #B87333;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --accent: #D2691E;
+    }
     
-    /* Neutrals */
-    --white: #FFFFFF;
-    --off-white: #FAFAFA;
-    --light-gray: #F5F5F5;
-    --gray: #E0E0E0;
-    --dark-gray: #424242;
-    --black: #1A1A1A;
-    
-    /* NEW Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, #0A3D3E 0%, #1A7073 100%);
-    --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(10, 61, 62, 0.95) 0%, rgba(26, 112, 115, 0.9) 100%);
-    
-    /* NEW Premium Typography */
-    --font-display: 'Playfair Display', serif;
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Raleway', sans-serif;
-    
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
-    
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
-    
-    /* Border Radius */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-xl: 30px;
-    
-    /* Transitions */
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-    
-   body {
-    font-family: var(--font-sans);
-    line-height: 1.7;
-    color: var(--dark-gray);
-    background: var(--off-white);
-    overflow-x: hidden;
-}
-html {
-    scroll-behavior: smooth;
-}
+    body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+    }
     
     .song-card {
         background: var(--bg-secondary);
@@ -4594,18 +4507,9 @@ html {
     }
     
     header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    transition: all var(--transition-smooth);
-}
+        background: var(--bg-secondary);
+    }
+    
     footer {
         background: var(--bg-secondary);
     }
