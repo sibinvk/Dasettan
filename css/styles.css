@@ -2276,7 +2276,7 @@ nav .active {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
 }
 
 .year-item .year {
