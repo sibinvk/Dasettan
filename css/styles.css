@@ -13,7 +13,7 @@
     
     /* Bright Teal (replaces brown) */
     --teal-bright: #14A8A8;
-    --teal-medium: #216e64;
+    --teal-medium: #2DD4BF;
     --teal-light: #5EEAD4;
     --teal-glow: rgba(20, 168, 168, 0.4);
     
@@ -127,7 +127,7 @@ nav {
 
 .stat {
     background: rgba(255,255,255,0.2);
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
 }
@@ -6027,4 +6027,318 @@ tr:hover {
 
 /* =================================================================
    END MOBILE FIXES
+   ================================================================= */
+
+
+/* =================================================================
+   CRITICAL FIX: HOME PAGE NAVIGATION VISIBILITY ON MOBILE
+   ================================================================= */
+
+/* FORCE HEADER TO STAY ON TOP - ALWAYS VISIBLE */
+header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+}
+
+/* Ensure nav is visible on home page */
+body header,
+body.home header,
+.home-page header {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force nav container visible */
+body nav,
+body.home nav,
+.home-page nav {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Logo must be visible on home page */
+body .logo,
+body.home .logo,
+.home-page .logo {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Mobile menu toggle visible on home page */
+@media (max-width: 768px) {
+    body .mobile-menu-toggle,
+    body.home .mobile-menu-toggle,
+    .home-page .mobile-menu-toggle {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 10001 !important;
+    }
+}
+
+/* Language button visible on home page */
+body .language-switcher,
+body.home .language-switcher,
+.home-page .language-switcher {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Hero should NOT cover header */
+.hero {
+    margin-top: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Ensure nothing pushes header down or hides it */
+body > * {
+    position: relative;
+}
+
+header {
+    position: sticky !important;
+}
+
+/* Desktop navigation always visible */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Mobile - hamburger and language button must show */
+@media (max-width: 768px) {
+    header nav {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: block !important;
+        order: 2 !important;
+    }
+    
+    .language-switcher {
+        display: block !important;
+        order: 3 !important;
+    }
+    
+    .logo {
+        display: flex !important;
+        order: 1 !important;
+    }
+    
+    /* Ensure header has proper height */
+    header {
+        min-height: 60px !important;
+        padding: 1rem 0 !important;
+    }
+    
+    nav {
+        min-height: 44px !important;
+        padding: 0 1rem !important;
+    }
+}
+
+/* =================================================================
+   END HOME PAGE NAVIGATION FIX
+   ================================================================= */
+
+
+/* =================================================================
+   DESKTOP LAYOUT FIX - BIOGRAPHY SECTION SIDE-BY-SIDE
+   ================================================================= */
+
+/* Biography section proper layout */
+.biography {
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+}
+
+.biography .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* DESKTOP: Image and text side by side */
+@media (min-width: 769px) {
+    .biography-content {
+        display: grid !important;
+        grid-template-columns: 400px 1fr !important;
+        gap: 3rem !important;
+        align-items: start !important;
+    }
+    
+    .biography-image {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        border-radius: 15px;
+        border: 2px solid var(--border-bright);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 30px var(--teal-glow);
+    }
+    
+    .biography-text {
+        flex: 1;
+    }
+    
+    .biography-content h2 {
+        color: var(--teal-light) !important;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 20px var(--teal-glow);
+    }
+    
+    .biography-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .awards-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+}
+
+/* MOBILE: Stacked layout */
+@media (max-width: 768px) {
+    .biography-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .biography-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 15px;
+        border: 2px solid var(--border-bright);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+    
+    .biography-content h2 {
+        color: var(--teal-light) !important;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .biography-content p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    
+    .awards-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Award badges styling */
+.award-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-light) 100%) !important;
+    color: var(--bg-darkest) !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px var(--gold-glow) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px var(--gold-glow) !important;
+}
+
+/* Languages section grid */
+.languages-section {
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+}
+
+.languages-section h2 {
+    color: var(--teal-light) !important;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Language cards */
+.language-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.language-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--border-bright) !important;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8), 0 0 25px var(--teal-glow) !important;
+}
+
+.language-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.language-card h3 {
+    color: var(--teal-light) !important;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.language-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.song-count {
+    display: inline-block;
+    color: var(--gold-bright);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+/* =================================================================
+   END DESKTOP LAYOUT FIX
    ================================================================= */
