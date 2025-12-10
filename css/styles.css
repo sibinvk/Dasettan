@@ -1958,7 +1958,7 @@ nav .active {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(135deg, #FFE5B4 0%, var(--gold-bright) 100%);
+    background: #E6B54D;
     border-radius: 15px;
     text-align: center;
 }
