@@ -2276,18 +2276,18 @@ nav .active {
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: right;
+    align-items: center;
 }
 
 .year-item .year {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--teal-bright);
 }
 
 .year-item .film {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.8.5rem;
 }
 
 .state-years-list {
