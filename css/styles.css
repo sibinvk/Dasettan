@@ -1033,7 +1033,7 @@ nav .active {
 }
 
 .chart-card {
-    background: var(--bg-medium);
+    background: #46556B;
    
     border-radius: 15px;
     padding: 2rem;
@@ -1062,7 +1062,7 @@ nav .active {
 }
 
 .top-list-card {
-    background: var(--bg-medium);
+    background: #46556B;
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
