@@ -3,55 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.J. Yesudas Tribute - The Legendary Voice</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
+    <title>K.J. Yesudas Tribute</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Main CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <style>
-        /* CRITICAL: Ensure header is ALWAYS visible on home page */
-        header {
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 10000 !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        
-        nav {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-    </style>
 </head>
-<body class="home-page">
-    <!-- Overlay for mobile menu -->
-    <div class="nav-overlay" id="navOverlay"></div>
-
-    <!-- Header - MUST BE VISIBLE -->
-    <header id="mainHeader" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
-        <nav style="display: flex !important; visibility: visible !important;">
-            <a href="index.html" class="logo" style="display: flex !important; visibility: visible !important;">
+<body>
+    <!-- Header - Same on Mobile & Desktop -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
                 <i class="fas fa-music"></i> K.J. Yesudas
             </a>
             
-            <!-- Mobile menu toggle - MUST BE VISIBLE -->
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
-                    style="display: block !important; visibility: visible !important;"
-                    aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Navigation Links -->
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="malayalam.html">Malayalam</a></li>
                 <li><a href="tamil.html">Tamil</a></li>
@@ -65,25 +29,16 @@
                 <li><a href="collaborations.html">Collaborations</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
-            
-            <!-- Language Switcher - MUST BE VISIBLE -->
-            <div class="language-switcher" style="display: block !important; visibility: visible !important;">
-                <button class="language-toggle" id="languageToggle">
-                    <i class="fas fa-globe"></i> English
-                </button>
-            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="position: relative; z-index: 1;">
-        <div class="animated-orbs"></div>
+    <section class="hero">
         <div class="hero-content">
             <h1>K.J. Yesudas</h1>
             <p class="hero-subtitle">The Legendary Voice of Indian Cinema</p>
             
-            <!-- Stats - ALWAYS HORIZONTAL -->
-            <div class="hero-stats" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important;">
+            <div class="hero-stats">
                 <div class="stat">
                     <div class="stat-number">40,000+</div>
                     <div class="stat-label">Songs</div>
@@ -100,15 +55,13 @@
         </div>
     </section>
 
-    <!-- Biography Section -->
+    <!-- Biography Section - Same Layout Always -->
     <section class="biography">
         <div class="container">
             <div class="biography-content">
-                <!-- Image Column -->
                 <img src="images/yesudas-portrait.jpg" alt="K.J. Yesudas" class="biography-image" 
                      onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%232D333B\' width=\'400\' height=\'400\'/%3E%3Ctext fill=\'%239198A1\' font-family=\'Arial\' font-size=\'24\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\'%3EK.J. Yesudas%3C/text%3E%3C/svg%3E'">
                 
-                <!-- Text Column -->
                 <div class="biography-text">
                     <h2>A Voice That Transcends Generations</h2>
                     
@@ -137,42 +90,42 @@
                 <a href="malayalam.html" class="language-card">
                     <div class="language-icon">🎭</div>
                     <h3>Malayalam</h3>
-                    <p>The language of his heart - over 10,000 songs</p>
+                    <p>The language of his heart</p>
                     <span class="song-count">10,000+ songs</span>
                 </a>
                 
                 <a href="tamil.html" class="language-card">
                     <div class="language-icon">🎬</div>
                     <h3>Tamil</h3>
-                    <p>Timeless melodies that captured Tamil cinema</p>
+                    <p>Timeless melodies</p>
                     <span class="song-count">8,500+ songs</span>
                 </a>
                 
                 <a href="telugu.html" class="language-card">
                     <div class="language-icon">🎪</div>
                     <h3>Telugu</h3>
-                    <p>Soul-stirring songs from Telugu films</p>
+                    <p>Soul-stirring songs</p>
                     <span class="song-count">7,200+ songs</span>
                 </a>
                 
                 <a href="kannada.html" class="language-card">
                     <div class="language-icon">🎨</div>
                     <h3>Kannada</h3>
-                    <p>Melodious contributions to Kannada cinema</p>
+                    <p>Melodious contributions</p>
                     <span class="song-count">5,000+ songs</span>
                 </a>
                 
                 <a href="hindi.html" class="language-card">
                     <div class="language-icon">🎵</div>
                     <h3>Hindi</h3>
-                    <p>Enchanting renditions in Hindi</p>
+                    <p>Enchanting renditions</p>
                     <span class="song-count">3,500+ songs</span>
                 </a>
                 
                 <a href="other.html" class="language-card">
                     <div class="language-icon">🌍</div>
                     <h3>Other Languages</h3>
-                    <p>Bengali, Marathi, Gujarati, and more</p>
+                    <p>Bengali, Marathi & more</p>
                     <span class="song-count">5,800+ songs</span>
                 </a>
             </div>
@@ -181,95 +134,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 K.J. Yesudas Tribute. A celebration of India's legendary voice.</p>
-            <p>All songs and content are property of their respective owners.</p>
-        </div>
+        <p>&copy; 2024 K.J. Yesudas Tribute. A celebration of India's legendary voice.</p>
     </footer>
-
-    <script>
-        // CRITICAL: Force header visible on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('mainHeader');
-            const nav = header.querySelector('nav');
-            const logo = header.querySelector('.logo');
-            const menuToggle = document.getElementById('mobileMenuToggle');
-            const langSwitcher = document.querySelector('.language-switcher');
-            
-            // Force visibility
-            header.style.display = 'block';
-            header.style.visibility = 'visible';
-            header.style.opacity = '1';
-            nav.style.display = 'flex';
-            nav.style.visibility = 'visible';
-            logo.style.display = 'flex';
-            logo.style.visibility = 'visible';
-            
-            if (window.innerWidth <= 768) {
-                menuToggle.style.display = 'block';
-                menuToggle.style.visibility = 'visible';
-            }
-            
-            if (langSwitcher) {
-                langSwitcher.style.display = 'block';
-                langSwitcher.style.visibility = 'visible';
-            }
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-        const navOverlay = document.getElementById('navOverlay');
-        
-        function toggleMobileMenu() {
-            navLinks.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            
-            // Change icon
-            const icon = mobileMenuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-        
-        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-        
-        // Close menu when clicking overlay
-        navOverlay.addEventListener('click', toggleMobileMenu);
-        
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            });
-        });
-        
-        // Header scroll effect
-        let lastScroll = 0;
-        const header = document.getElementById('mainHeader');
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            // CRITICAL: Always keep header visible
-            header.style.display = 'block';
-            header.style.visibility = 'visible';
-            header.style.opacity = '1';
-            
-            lastScroll = currentScroll;
-        });
-    </script>
 </body>
 </html>
