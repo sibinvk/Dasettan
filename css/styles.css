@@ -71,9 +71,9 @@ nav {
 }
 
 .logo {
-    /*background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);*/
+    /*background: linear-gradient(135deg, var(--teal-bright) 0%, var(--teal-medium) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;*/
     background-clip: text;
     font-size: 1.5rem;
     font-weight: bold;
