@@ -3784,7 +3784,7 @@ nav .active {
 
 .composer-card.featured {
     border: 3px solid var(--gold-bright);
-    background: linear-gradient(135deg, #FFF9E6 0%, #FFFBF0 100%);
+    background: var(--bg-medium);
 }
 
 .composer-header {
