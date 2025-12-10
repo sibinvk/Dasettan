@@ -180,6 +180,9 @@ nav {
     color: var(--teal-bright);
     font-size: 2.5rem;
     margin-bottom: 1rem;
+   
+    position: relative;
+    display: inline-block;
 }
 
 .biography-content p {
