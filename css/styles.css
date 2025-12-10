@@ -7,7 +7,7 @@
     /* Dark Backgrounds */
     --bg-darkest: #0A0E12;
     --bg-dark: #0D1117;
-    --bg-medium: #161B22;
+    --bg-medium: #3D4B5E;
     --bg-elevated: #21262D;
     --bg-card: #2D333B;
     
@@ -1034,6 +1034,7 @@ nav .active {
 
 .chart-card {
     background: var(--bg-medium);
+   
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
