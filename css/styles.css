@@ -1097,7 +1097,7 @@ nav .active {
 }
 
 .top-list-item .rank {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: var(--teal-medium);
     min-width: 50px;
@@ -1112,8 +1112,8 @@ nav .active {
 
 .top-list-item .count {
     color: var(--text-muted);
-    font-size: 1.5rem;
-    white-space: nowrap;
+    font-size: 1rem;
+    white-space: wrap;
 }
 
 /* Timeline Section */
